@@ -1,0 +1,12 @@
+-- app.renderLayout("Comment")
+
+	div.page-header
+		h1	Visitor Comment
+		
+	p.lead	${visitor.name} said:
+	
+	blockquote
+		p		${visitor.comment}
+		small	${visitor.visitedOn.toLocale("DD MMM YYYY")}
+
+	a.btn.btn-primary (href="/") < Back
