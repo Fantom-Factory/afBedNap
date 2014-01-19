@@ -1,0 +1,47 @@
+-- app.renderLayout("Welcome!")
+
+	div.page-header
+		h1	Bed Nap Hotel
+			small |  An Example Bed App
+
+	p	Thanks for staying at the Bed Nap Hotel! 
+
+
+
+	h2	Add a comment
+	p	Feel free to leave a comment below! 
+		span.text-muted ( ) (Sample text inserted for your convenience.)
+	
+	form.form-horizontal (autocomplete="off" method="post" action="/make")
+		div.form-group
+			label.control-label.col-sm-2 (for="name") Name
+			div.col-sm-10
+				input#name.form-control (name="name" type="text" value="${sample.name}")
+		div.form-group
+			label.control-label.col-sm-2 (for="comment") Comment
+			div.col-sm-10
+				textarea#comment.form-control (name="comment") ${sample.comment}
+		div.form-group
+			div.col-sm-offset-2.col-sm-10
+				input.btn.btn-primary (type="submit" value="Submit")
+
+
+
+	h2	Comments
+	p	Read other peoples' comments below:
+	
+	table.table.table-striped
+		thead
+			tr
+				th	Name
+				th	Visited On
+				th	Comment
+				th
+		tbody
+			-- visitorBook.all.each |visitor|
+				tr
+					td	${visitor.name}
+					td	${visitor.visitedOn.toLocale("DD MMM YYYY")}
+					td	${visitor.commentAbbr}
+					td
+						a (href="/visitor/${visitor.id}") view
