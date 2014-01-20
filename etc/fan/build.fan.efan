@@ -18,6 +18,7 @@ class Build : BuildPod {
 			"sys 1.0", 
 			"concurrent 1.0",
 			"util 1.0",
+			"fandoc 1.0",
 
 			// core Ioc
 			"afIoc 1.5+", 

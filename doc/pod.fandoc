@@ -66,10 +66,19 @@ To see the results, just rebuild the pod with 'fan build.fan' and refresh your b
 
 
 
+Source Code [#sourceCode]
+*************************
+If you can't wait to download 'Bed Nap' and create your own working web application, view the source code
+over at [BitBucket]`https://bitbucket.org/AlienFactory/afbednap/src`:
+
+`https://bitbucket.org/AlienFactory/afbednap/src`
+
+
+
 Release Notes [#releaseNotes]
 *****************************
 
-v1.0.2 [#v1.0.2]
+v0.0.2 [#v0.0.2]
 ----------------
  - New: Preview release
 

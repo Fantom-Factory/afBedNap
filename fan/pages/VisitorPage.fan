@@ -9,5 +9,4 @@ const mixin VisitorPage : Page {
 	Void initRender(Visitor visitor) {
 		this.visitor = visitor
 	}
-	
 }
