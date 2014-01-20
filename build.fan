@@ -11,7 +11,7 @@ class Build : BuildPod {
 		meta	= [
 			"org.name"		: "Alien-Factory",
 			"org.uri"		: "http://www.alienfactory.co.uk/",
-			"proj.name"		: "BedNap",
+			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbednap",
 			"license.name"	: "BSD 2-Clause License",	
@@ -24,6 +24,7 @@ class Build : BuildPod {
 			"sys 1.0", 
 			"concurrent 1.0",
 			"util 1.0",
+			"fandoc 1.0",
 
 			// core Ioc
 			"afIoc 1.5+", 
@@ -44,7 +45,7 @@ class Build : BuildPod {
 		]
 
 		srcDirs = [`test/app-tests/`, `fan/`, `fan/pages/`, `fan/components/`]
-		resDirs = [`etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
+		resDirs = [`doc/`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
 		docApi = false
 		docSrc = false

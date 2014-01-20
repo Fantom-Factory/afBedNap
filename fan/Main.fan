@@ -53,7 +53,7 @@ class Main : AbstractMain {
 				it.copyTo(newFile, ["overwrite":true])
 				fileCount++
 			}
-		this.typeof.pod.file(`/doc/pod.fandoc`, false)?.copyInto(copyto)
+		this.typeof.pod.file(`/doc/pod.fandoc`, false).copyInto(copyto.createDir("doc"))
 		
 		buildFile	:= this.typeof.pod.file(`/etc/fan/build.fan.efan`)
 		mainFile	:= this.typeof.pod.file(`/etc/fan/Main.fan.efan` )
