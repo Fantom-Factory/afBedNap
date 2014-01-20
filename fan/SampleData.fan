@@ -1,4 +1,5 @@
 using afIoc::Inject
+using afIocConfig::Config
 
 const class SampleData {
 	private const Str[] names		:= loadList("names.txt") 
@@ -6,10 +7,15 @@ const class SampleData {
 	
 	@Inject	
 	private const VisitorBookService visitorBook
+
+	@Inject	@Config { id="afIocEnv.isTest" }
+	private const Bool isTest
 	
 	new make(|This|in) { in(this) }
 	
 	Void createSampleData() {
+		if (isTest) return
+
 		(1..((3..7).random)).each {
 			visitor := createSampleVisitor()
 			visitorBook.add(visitor)
