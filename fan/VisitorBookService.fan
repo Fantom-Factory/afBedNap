@@ -3,6 +3,7 @@ using afIoc::ConcurrentCache
 using afBedSheet::Redirect
 using afBedSheet::HttpRequest
 using afPillow::Pages
+using concurrent::AtomicRef
 
 const class VisitorBookService {
 			private const ConcurrentCache 	visitorBook		:= ConcurrentCache()
@@ -24,8 +25,14 @@ const class VisitorBookService {
 	}
 	
 	Void add(Visitor visitor) {
-		id := idGenerator.nextId
+		id := visitor.id ?: idGenerator.nextId
 		visitorBook.set(id, visitor.withId(id))
+	}
+	
+	Void clear() {
+		// visitorBook.clear	// needs a bug fix
+		// temp solution until afIoc is updated
+		((AtomicRef) ConcurrentCache#.field("atomicMap").get(visitorBook)).val = [:].toImmutable
 	}
 	
 	Redirect makeVisitor() {

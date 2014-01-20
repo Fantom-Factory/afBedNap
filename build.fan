@@ -41,7 +41,8 @@ class Build : BuildPod {
 			// for testing
 			"afButter 0+",
 			"afBounce 0+",
-			"afSizzle 0+"
+			"afSizzle 0+",
+			"xml 1.0",
 		]
 
 		srcDirs = [`test/app-tests/`, `fan/`, `fan/pages/`, `fan/components/`]
