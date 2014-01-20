@@ -1,0 +1,6 @@
+
+class Main {
+	Void main() {
+		return afBedSheet::Main().main("-proxy <%= ctx["podname"] %> 8069".split)
+	}
+}

@@ -1,0 +1,75 @@
+
+Overview [#overview]
+********************
+'BedNap' is a simple [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` application with master / detail screens that
+can be used as a template to kickstart your own Bed Apps.
+
+'BedNap' exists so developers can browse the source code and see for themselves how easy it is to piece together a
+working application with [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` and other libraries.
+'Bed Nap' also features acceptance tests that probe the generated HTML and verifies the markup.
+
+
+
+Quick Start [#quickStart]
+*************************
+
+1. Install [#install]
+=====================
+Install 'Bed Nap' with the [Fantom Repository Manager]`http://fantom.org/doc/docFanr/Tool.html#install`:
+
+  C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
+
+
+
+2. Create [#create]
+===================
+Create your own working web application by replicating 'Bed Nap' in to a working directory.
+Do this with the following command, where 'podname' is the name of your web application.
+
+  C:\> fan afBedNap -copyto C:\projects\ -podname myBedApp
+
+This creates a copy of 'Bed Nap' in 'C:\projects\myBedApp' with the name 'myBedApp'.
+
+
+
+3. Run [#run]
+=============
+You can now build, test and run your new web app straight away!
+
+To build, move in to the directory you've just created and run:
+
+  C:\projects\myBedApp> fan build.fan
+  compile [myBedApp]
+    Compile [myBedApp]
+      FindSourceFiles [13 files]
+      WritePod [file:/C:/Apps/Fantom/fan/lib/fan/myBedApp.pod]
+  BUILD SUCCESS [451ms]!
+
+Test the app with [fant]`http://fantom.org/doc/docTools/Fant.html`:
+
+  C:\projects\myBedApp> fant myBedApp
+  ***
+  *** All tests passed! [1 tests, 1 methods, 1 verifies]
+  ***
+
+Run the web application with:
+
+  C:\projects\myBedApp> fan myBedApp
+
+And point your web browser at: `http://localhost:8069/`
+
+
+4. Repeat [#repeat]
+===================
+Feel free to modify the fantom source, web templates, and tests.
+To see the results, just rebuild the pod with 'fan build.fan' and refresh your browser!
+
+
+
+Release Notes [#releaseNotes]
+*****************************
+
+v1.0.2 [#v1.0.2]
+----------------
+ - New: Preview release
+

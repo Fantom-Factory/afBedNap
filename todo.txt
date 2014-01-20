@@ -1,0 +1,2 @@
+
+ have template build.fan and Main.fan files, in /etc - make main simple, no Opts, all hardcoded

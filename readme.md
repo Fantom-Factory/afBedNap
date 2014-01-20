@@ -1,6 +1,7 @@
-# FantomFactory
+# Bed Nap
 
-FantomFactory is a [Fantom](http://fantom.org/) library for ...
+`BedNap` is a simple [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) application that can be used as a 
+template to kickstart your own Bed Apps.
 
 
 

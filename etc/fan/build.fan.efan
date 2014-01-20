@@ -1,0 +1,42 @@
+using build
+using fanr
+
+class Build : BuildPod {
+
+	new make() {
+		podName = "<%= ctx["podname"] %>"
+		summary = "A simple BedSheet application"
+		version = Version("0.0.1")
+
+		meta	= [
+			"org.name"		: "Fantom-Factory",
+			"org.uri"		: "http://www.fantomfactory.org/",
+			"afIoc.module"	: "<%= ctx["podname"] %>::AppModule"
+		]
+
+		depends = [	
+			"sys 1.0", 
+			"concurrent 1.0",
+			"util 1.0",
+
+			// core Ioc
+			"afIoc 1.5+", 
+			"afIocConfig 1.0+", 
+			"afIocEnv 1.0+", 
+
+			// web stuff
+			"afBedSheet 1.2.4.1+", 
+			"afEfanXtra 1.0.6+",
+			"afPillow 0+",
+			"afSlim 1.1+",
+	
+			// for testing
+			"afButter 0+",
+			"afBounce 0+",
+			"afSizzle 0+"
+		]
+
+		srcDirs = [`test/app-tests/`, `fan/`, `fan/pages/`, `fan/components/`]
+		resDirs = [`etc/`, `etc/components/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
+	}
+}
