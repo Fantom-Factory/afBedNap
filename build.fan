@@ -45,7 +45,7 @@ class Build : BuildPod {
 			"xml 1.0",
 		]
 
-		srcDirs = [`test/app-tests/`, `fan/`, `fan/pages/`, `fan/components/`]
+		srcDirs = [`test/`, `fan/`, `fan/pages/`, `fan/components/`]
 		resDirs = [`doc/`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
 		docApi = false
@@ -64,8 +64,7 @@ class Build : BuildPod {
 	
 	@Target { help = "Compile to pod file and associated natives" }
 	override Void compile() {
-		srcDirs = srcDirs.addAll(resDirs)
-		
+		resDirs = resDirs.addAll(srcDirs)
 		super.compile
 	}
 }

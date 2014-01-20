@@ -43,7 +43,6 @@ class Main : AbstractMain {
 			return err("`${copyto.osPath}` is not a directory")
 		
 		copyto = copyto.createDir(podname)
-		Env.cur.err.printLine(copyto.osPath)
 		
 		fileCount := 0
 		this.typeof.pod.files
@@ -53,7 +52,7 @@ class Main : AbstractMain {
 				it.copyTo(newFile, ["overwrite":true])
 				fileCount++
 			}
-		this.typeof.pod.file(`/doc/pod.fandoc`, false).copyInto(copyto.createDir("doc"))
+		this.typeof.pod.file(`/doc/pod.fandoc`, false).copyInto(copyto.createDir("doc"), ["overwrite":true])
 		
 		buildFile	:= this.typeof.pod.file(`/etc/fan/build.fan.efan`)
 		mainFile	:= this.typeof.pod.file(`/etc/fan/Main.fan.efan` )
@@ -63,7 +62,8 @@ class Main : AbstractMain {
 		(copyto + `fan/Main.fan`).out.print(mainStr ).close
 		fileCount += 2
 		
-		Env.cur.out.printLine("Copied $fileCount files to '${copyto.osPath}'")
+		Env.cur.out.printLine("Copied $fileCount files to '${copyto.normalize.osPath}'")
+		Env.cur.out.printLine("Bed App '$podname' has been created!")
 		return 0
 	}
 	
