@@ -1,29 +1,75 @@
 # Bed Nap
 
-`BedNap` is a simple [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) application that can be used as a 
-template to kickstart your own Bed Apps.
+`BedNap` is a simple [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
+
+`BedNap` exists so developers can browse the source code and see for themselves how easy it is to piece together a
+working application with [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) and other libraries.
+`Bed Nap` also features acceptance tests that probe the generated HTML and verifies the markup.
 
 
 
 ## Quick Start
 
-    Example here
+### 1. Install
+
+Install `Bed Nap` with the [Fantom Repository Manager](http://fantom.org/doc/docFanr/Tool.html#install):
+
+    C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
 
 
-## Documentation
 
-Full API & fandocs are available on the [status302 repository](http://repo.status302.com/doc/afFantomFactory/#overview).
+### 2. Create
+
+Create your own working web application by replicating `Bed Nap` in to a working directory.
+Do this with the following command, where `podname` is the name of your web application.
+
+    C:\> fan afBedNap -copyto C:\projects\ -podname myBedApp
+
+    Copied 25 files to 'C:\projects\myBedApp'
+    Bed App 'myBedApp' has been created!
+
+This creates a copy of `Bed Nap` in `C:\projects\myBedApp` with the name `myBedApp`.
 
 
 
-## Install
+### 3. Run
 
-Download from [status302](http://repo.status302.com/browse/afFantomFactory).
+You can now build, test and run your new web app straight away!
 
-Or install via fanr:
+To build, move in to the directory you've just created and run:
 
-    $ fanr install -r http://repo.status302.com/fanr/ afFantomFactory
+    C:\projects\myBedApp> fan build.fan
 
-To use in a project, add a dependency in your `build.fan`:
+    compile [myBedApp]
+      Compile [myBedApp]
+        FindSourceFiles [15 files]
+        WritePod [file:/C:/Apps/Fantom/fan/lib/fan/myBedApp.pod]
+    BUILD SUCCESS [451ms]!
 
-    depends = ["sys 1.0", ..., "afFantomFactory 0+"]
+Test the app with [fant](http://fantom.org/doc/docTools/Fant.html):
+
+    C:\projects\myBedApp> fant myBedApp
+
+    ***
+    *** All tests passed! [3 tests, 4 methods, 19 verifies]
+    ***
+
+Run the web application with:
+
+    C:\projects\myBedApp> fan myBedApp
+
+       ___    __                 _____        _
+      / _ |  / /  _____  _____  / ___/__  ___/ /_________  __ __
+     / _  | / /_ / / -_|/ _  / / __// _ \/ _/ __/ _  / __|/ // /
+    /_/ |_|/___//_/\__|/_//_/ /_/   \_,_/__/\__/____/_/   \_, /
+             Alien-Factory BedSheet v1.2.4.1, IoC v1.5.0 /___/
+
+    BedSheet started up in 1,809ms
+
+And point your web browser at: [http://localhost:8069/]
+
+
+### 4. Repeat
+
+Feel free to modify the fantom source, web templates, and tests.
+To see the results, just rebuild the pod with 'fan build.fan' and refresh your browser!
