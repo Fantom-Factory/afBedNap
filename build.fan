@@ -1,16 +1,17 @@
 using build
+using fanr
 
 class Build : BuildPod {
 
 	new make() {
 		podName = "afBedNap"
-		summary = "An online Fantom regular expression editor"
+		summary = "A simple BedSheet application that can be used as a template to kickstart your own Bed Apps"
 		version = Version("0.0.1")
 
 		meta	= [
 			"org.name"		: "Alien-Factory",
 			"org.uri"		: "http://www.alienfactory.co.uk/",
-			"proj.name"		: "Fantom-Factory",
+			"proj.name"		: "BedNap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbednap",
 			"license.name"	: "BSD 2-Clause License",	
@@ -33,6 +34,7 @@ class Build : BuildPod {
 			"afBedSheet 1.2.4.1+", 
 			"afEfanXtra 1.0.6+",
 			"afPillow 0+",
+			"afEfan 1.3+",
 			"afSlim 1.1+",
 	
 			// for testing
@@ -42,10 +44,26 @@ class Build : BuildPod {
 		]
 
 		srcDirs = [`test/app-tests/`, `fan/`, `fan/pages/`, `fan/components/`]
-		resDirs = [`etc/`, `etc/components/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`, `etc/web/images/`]
-//		resDirs = [`etc/`, `etc/samples/`]
+		resDirs = [`etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
 		docApi = false
 		docSrc = false
+	}
+	
+	@Target { help = "Heroku pre-compile hook, use to install dependencies" }
+	Void herokuPreCompile() {
+		repo := "http://repo.status302.com/fanr/"
+		depends.each {
+			status := fanr::Main().main("install -y -r ${repo} ${Depend(it).name}".split)
+			// abort build if something went wrong
+			if (status != 0) Env.cur.exit(status)			
+		}
+	}
+	
+	@Target { help = "Compile to pod file and associated natives" }
+	override Void compile() {
+		srcDirs = srcDirs.addAll(resDirs)
+		
+		super.compile
 	}
 }

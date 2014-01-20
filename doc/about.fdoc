@@ -1,0 +1,8 @@
+'BedNap' is a simple [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` application with master / detail screens that
+can be used as a template to kickstart your own Bed Apps.
+
+'BedNap' exists so developers can browse the source code and see for themselves how easy it is to piece together a
+working application with [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` and other libraries.
+'Bed Nap' also features acceptance tests that probe the generated HTML and verifies the markup.
+
+Visit **`http://bednap.fantomfactory.org/`** to see a live demo of 'Bed Nap'!
