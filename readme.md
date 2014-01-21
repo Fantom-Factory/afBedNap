@@ -66,10 +66,10 @@ Run the web application with:
 
     BedSheet started up in 1,809ms
 
-And point your web browser at: [http://localhost:8069/]
+And point your web browser at: [http://localhost:8069/](http://localhost:8069/)
 
 
 ### 4. Repeat
 
 Feel free to modify the fantom source, web templates, and tests.
-To see the results, just rebuild the pod with 'fan build.fan' and refresh your browser!
+To see the results, just rebuild the pod with `fan build.fan` and refresh your browser!

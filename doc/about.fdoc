@@ -5,4 +5,4 @@ can be used as a template to kickstart your own Bed Apps.
 working application with [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` and other libraries.
 'Bed Nap' also features acceptance tests that probe the generated HTML and verifies the markup.
 
-Visit **`http://bednap.fantomfactory.org/`** to see a live demo of 'Bed Nap'!
+Visit `http://bednap.fantomfactory.org/` for a live demo of 'Bed Nap'!
