@@ -27,21 +27,21 @@ class Build : BuildPod {
 			"fandoc 1.0",
 
 			// core Ioc
-			"afIoc 1.5+", 
-			"afIocConfig 1.0+", 
-			"afIocEnv 1.0+", 
+			"afIoc 1.5.2+", 
+			"afIocConfig 1.0.2+", 
+			"afIocEnv 1.0.0+", 
 
 			// web stuff
-			"afBedSheet 1.2.4.1+", 
+			"afBedSheet 1.3.0+", 
 			"afEfanXtra 1.0.6+",
 			"afPillow 0+",
-			"afEfan 1.3+",
-			"afSlim 1.1+",
+			"afEfan 1.3.6.2+",
+			"afSlim 1.1.0.1+",
 	
 			// for testing
-			"afButter 0+",
-			"afBounce 0+",
-			"afSizzle 0+",
+			"afButter 0.0.2+",
+			"afBounce 0.0.3+",	// TODO
+			"afSizzle 0.0.2+",
 			"xml 1.0",
 		]
 

@@ -7,10 +7,10 @@ using afSlim
 const class AppModule {
 
 	static Void bind(ServiceBinder binder) {
-		binder.bindImpl(IdGenerator#)
-		binder.bindImpl(VisitorBookService#)
+		binder.bind(IdGenerator#)
+		binder.bind(VisitorBookService#)
 
-		binder.bindImpl(SampleData#)
+		binder.bind(SampleData#)
 	}
  
 	@Contribute { serviceType=Routes# }

@@ -30,9 +30,7 @@ const class VisitorBookService {
 	}
 	
 	Void clear() {
-		// visitorBook.clear	// needs a bug fix
-		// temp solution until afIoc is updated
-		((AtomicRef) ConcurrentCache#.field("atomicMap").get(visitorBook)).val = [:].toImmutable
+		 visitorBook.clear
 	}
 	
 	Redirect makeVisitor() {
