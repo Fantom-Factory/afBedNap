@@ -1,6 +1,6 @@
 
 class Main {
 	Int main() {
-		afBedSheet::Main().main("-proxy <%= ctx["podname"] %> 8069".split)
+		afBedSheet::Main().main("-proxy -env dev <%= ctx["podname"] %> 8069".split)
 	}
 }

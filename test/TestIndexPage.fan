@@ -10,14 +10,14 @@ internal class TestIndexPage : BedNapTest {
 		response := client.get(`/`)
 		verifyEq(response.statusCode, 200)
 		
-		h1	:= client.select("h1").first
+		h1	:= client.selectCss("h1").first
 		verifyEq(h1.text.writeToStr, "Bed Nap Hotel")
 
-		h2	:= client.select("h2.panel-title")
+		h2	:= client.selectCss("h2.panel-title")
 		verifyEq(h2[0].text.writeToStr, "Add a comment")
 		verifyEq(h2[1].text.writeToStr, "Visitor Comments")
 		
-		overview	:= client.select("#overview").first
+		overview	:= client.selectCss("#overview").first
 		verifyEq(overview.text.writeToStr.trim, "Overview")
 	}
 	
@@ -40,7 +40,7 @@ internal class TestIndexPage : BedNapTest {
 		response := client.get(`/`)
 		verifyEq(response.statusCode, 200)
 
-		tableRows := client.select("table > tbody > tr")
+		tableRows := client.selectCss("table > tbody > tr")
 		verifyEq(tableRows.size, 2)
 		
 		row1 := Sizzle().selectFromElem(tableRows[0], "td")
