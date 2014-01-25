@@ -6,7 +6,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it kickstart your own Bed Apps!"
-		version = Version("0.0.4")
+		version = Version("0.0.5")
 
 		meta	= [
 			"org.name"		: "Alien-Factory",
