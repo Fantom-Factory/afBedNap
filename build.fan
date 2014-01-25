@@ -33,19 +33,19 @@ class Build : BuildPod {
 
 			// web stuff
 			"afBedSheet 1.3.0+", 
-			"afEfanXtra 1.0.6+",
-			"afPillow 0+",
 			"afEfan 1.3.6.2+",
-			"afSlim 1.1.0.1+",
+			"afEfanXtra 1.0.8+",
+			"afPillow 0+",
+			"afSlim 1.1.2+",
 	
 			// for testing
 			"afButter 0.0.2+",
-			"afBounce 0.0.3+",	// TODO
+			"afBounce 0.0.4+",
 			"afSizzle 0.0.2+",
 			"xml 1.0",
 		]
 
-		srcDirs = [`test/`, `fan/`, `fan/pages/`, `fan/components/`]
+		srcDirs = [`test/`, `fan/`]
 		resDirs = [`doc/`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
 		docApi = false

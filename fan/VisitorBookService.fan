@@ -1,9 +1,10 @@
+using concurrent::AtomicInt
 using afIoc::Inject
 using afIoc::ConcurrentCache
 using afBedSheet::Redirect
 using afBedSheet::HttpRequest
 using afPillow::Pages
-using concurrent::AtomicRef
+
 
 const class VisitorBookService {
 			private const ConcurrentCache 	visitorBook		:= ConcurrentCache()
@@ -43,5 +44,13 @@ const class VisitorBookService {
 		add(visitor)
 		
 		return Redirect.afterPost(pages.clientUri(IndexPage#))
+	}
+}
+
+const class IdGenerator {
+	private const AtomicInt lastId	:= AtomicInt()
+	
+	Int nextId() {
+		return lastId.incrementAndGet
 	}
 }

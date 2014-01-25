@@ -81,15 +81,26 @@ To see the results, just rebuild the pod with 'fan build.fan' and refresh your b
 
 Source Code [#sourceCode]
 *************************
-If you can't wait to download 'Bed Nap' and create your own working web application, view the source code
-over at [BitBucket]`https://bitbucket.org/AlienFactory/afbednap/src`:
+If you can't wait to download 'Bed Nap' and create your own working web application, you can browse the source code below.
+Click on a file to view it:
 
-`https://bitbucket.org/AlienFactory/afbednap/src`
+<%# This .fandoc file is used as an efan template for the Overview component %>
+
+<%# View this app at `http://bednap.fantomfactory.org/` to see the File Tree %>
+
+<% app.renderFileTree() %>
+
+You can also view the source code over at BitBucket at: `https://bitbucket.org/AlienFactory/afbednap/src`
 
 
 
 Release Notes [#releaseNotes]
 *****************************
+
+v0.0.4 [#v0.0.4]
+----------------
+ - New: Added 'FileTree' component so you can browse the source code, in the application!
+ - Chg: Updated to latest af* library versions & removed workarounds.
 
 v0.0.2 [#v0.0.2]
 ----------------
