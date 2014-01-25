@@ -16,6 +16,7 @@ const class AppModule {
 	@Contribute { serviceType=Routes# }
 	static Void contributeRoutes(OrderedConfig config) {
 		config.add(Route(`/make`, VisitorBookService#makeVisitor, "POST"))
+		config.add(Route(`/src/***`,  SourceCode#service))
 	}
  
 	@Contribute { serviceType=ValueEncoders# }
@@ -26,11 +27,6 @@ const class AppModule {
 	@Contribute { serviceType=RegistryStartup# }
 	static Void contributeRegistryStartup(OrderedConfig config, SampleData sampleData) {
 		config.add |->| { sampleData.createSampleData() }
-	}
-
-	@Contribute { serviceType=ApplicationDefaults# }
-	static Void contributeApplicationDefaults(MappedConfig config) {
-		
 	}
 
 
