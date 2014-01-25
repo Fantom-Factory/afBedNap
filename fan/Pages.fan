@@ -15,6 +15,10 @@ const mixin IndexPage : Page {
 	Void initRender() {
 		sample = sampleData.createSampleVisitor
 	}
+	
+	Str version() {
+		IndexPage#.pod.version.toStr
+	}
 }
 
 ** Returns the given source file as plain text.
