@@ -47,7 +47,7 @@ class Main : AbstractMain {
 		
 		fileCount := 0
 		this.typeof.pod.files
-			.exclude { it.uri.path.size <= 1 || ["fcode", "doc"].contains(it.uri.path[0]) || it.ext == "efan" }
+			.exclude { it.uri.path.size <= 1 || ["fcode", "doc", "src"].contains(it.uri.path[0]) || it.ext == "efan" }
 			.each {
 				newFile := copyto + it.uri.pathOnly.toStr[1..-1].toUri
 				it.copyTo(newFile, ["overwrite":true])

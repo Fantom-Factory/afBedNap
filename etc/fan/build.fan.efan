@@ -37,7 +37,7 @@ class Build : BuildPod {
 			"afSizzle 0+"
 		]
 
-		srcDirs = [`fan/`, `fan/pages/`, `fan/components/`, `test/`]
+		srcDirs = [`fan/`, `test/`]
 		resDirs = [`etc/`, `etc/components/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 	}
 }
