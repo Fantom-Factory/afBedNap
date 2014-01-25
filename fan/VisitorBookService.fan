@@ -5,7 +5,7 @@ using afBedSheet::Redirect
 using afBedSheet::HttpRequest
 using afPillow::Pages
 
-
+** (Service) For creating and retrieving visitor entities.
 const class VisitorBookService {
 			private const ConcurrentCache 	visitorBook		:= ConcurrentCache()
 	static 	private const |Obj, Obj->Int|	sortByVisitedOn := |v1, v2->Int| { ((Visitor) v1).visitedOn <=> ((Visitor) v2).visitedOn }
@@ -47,6 +47,7 @@ const class VisitorBookService {
 	}
 }
 
+** (Service) Generates a sequence of numbers to be used as `Visitor` IDs.
 const class IdGenerator {
 	private const AtomicInt lastId	:= AtomicInt()
 	

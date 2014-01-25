@@ -1,6 +1,7 @@
 using util
 using afEfan
 
+@NoDoc
 class Main : AbstractMain {
 
 	@Opt { help="The directory to copy Bed Nap to" }

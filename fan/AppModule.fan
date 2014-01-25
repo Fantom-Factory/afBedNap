@@ -4,6 +4,7 @@ using afBedSheet
 using afEfanXtra
 using afSlim
 
+** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module class.
 const class AppModule {
 
 	static Void bind(ServiceBinder binder) {
@@ -15,8 +16,8 @@ const class AppModule {
  
 	@Contribute { serviceType=Routes# }
 	static Void contributeRoutes(OrderedConfig config) {
-		config.add(Route(`/make`, VisitorBookService#makeVisitor, "POST"))
-		config.add(Route(`/src/***`,  SourceCode#service))
+		config.add(Route(`/make`, 	 VisitorBookService#makeVisitor, "POST"))
+		config.add(Route(`/src/***`, SourceCodePage#service))
 	}
  
 	@Contribute { serviceType=ValueEncoders# }
