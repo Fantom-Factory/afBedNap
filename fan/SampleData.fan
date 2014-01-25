@@ -1,6 +1,7 @@
 using afIoc::Inject
 using afIocConfig::Config
 
+@NoDoc
 const class SampleData {
 	private const Str[] names		:= loadList("names.txt") 
 	private const Str[] comments	:= loadList("comments.txt") 

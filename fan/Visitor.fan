@@ -1,4 +1,5 @@
 
+** Entity representing a visitor comment.
 const class Visitor {
 	const Int?		id
 	const Str		name

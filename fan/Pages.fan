@@ -4,6 +4,7 @@ using afEfanXtra::InitRender
 using afBedSheet::Text
 using afBedSheet::ValueEncoder
 
+** (Pillow page) The main application page.
 const mixin IndexPage : Page {
 	@Inject abstract VisitorBookService	visitorBook
 	@Inject abstract SampleData sampleData
@@ -16,14 +17,16 @@ const mixin IndexPage : Page {
 	}
 }
 
-** This is not a Pillow Page but a Route Request handler
-const class SourceCode {
-	// Ensure a plain text Mime Type, as most browsers don't know what 'text/fandoc' is.
+** Returns the given source file as plain text.
+** Note this is not a Pillow Page but a Route Request handler.
+const class SourceCodePage {
+	// Ensure a plain text Mime Type, as most browsers don't know what 'text/fandoc' is!
 	Obj service(Uri file) {
 		return Text.fromPlain(file.toFile.readAllStr)
 	}
 }
 
+** (Pillow page) Displays a `Visitor` entity in full.
 const mixin VisitorPage : Page {
 	abstract Visitor visitor
 	
@@ -33,8 +36,9 @@ const mixin VisitorPage : Page {
 	}
 }
 
-** By registering this ValueEncoder (in AppModule) methods, such as 
-** @InitRender above, can take Visitor entities as InitRender arguments.
+** Converts `Visitor` objects to and from a 'Str'.
+** By registering this ValueEncoder (in `AppModule`) methods, such as 
+** '@InitRender' above, can take Visitor entities as InitRender arguments.
 const class VisitorValueEncoder : ValueEncoder {
 	@Inject private const VisitorBookService visitorBook
 	

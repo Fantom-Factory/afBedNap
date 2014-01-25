@@ -3,7 +3,7 @@ using afBounce
 using afIoc
 using afIocEnv
 
-internal class BedNapTest : Test {
+internal abstract class BedNapTest : Test {
 	BedServer? 	server
 	BedClient? 	client
 	
@@ -18,7 +18,7 @@ internal class BedNapTest : Test {
 	}
 }
 
-class WebTestModule {
+internal class WebTestModule {
     @Contribute { serviceType=ServiceOverride# }
     static Void contributeServiceOverride(MappedConfig config) {
         config["IocEnv"] = IocEnv.fromStr("Testing")
