@@ -35,7 +35,7 @@ class Build : BuildPod {
 			"afBedSheet 1.3.0+", 
 			"afEfan 1.3.6.2+",
 			"afEfanXtra 1.0.8+",
-			"afPillow 0+",
+			"afPillow 0.0.8+",
 			"afSlim 1.1.2+",
 	
 			// for testing

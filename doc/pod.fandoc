@@ -97,6 +97,10 @@ You can also view the source code over at BitBucket at: `https://bitbucket.org/A
 Release Notes [#releaseNotes]
 *****************************
 
+v0.0.6 [#v0.0.6]
+----------------
+ - Chg: Pages are served up with an XHTML5 content type.
+
 v0.0.4 [#v0.0.4]
 ----------------
  - New: Added 'FileTree' component so you can browse the source code, in the application!
