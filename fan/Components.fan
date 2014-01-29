@@ -23,5 +23,5 @@ const mixin Layout : EfanComponent {
 }
 
 ** (efan component) Renders the 'pod.fandoc'.
-@EfanTemplate { uri=`doc/pod.fandoc`}
+@EfanTemplate { uri=`fan://afBedNap/doc/pod.fandoc`}
 const mixin Overview : EfanComponent { }

@@ -1,6 +1,5 @@
 using afIoc
 using afButter
-using afSizzle
 
 internal class TestIndexPage : BedNapTest {
 
@@ -10,15 +9,15 @@ internal class TestIndexPage : BedNapTest {
 		response := client.get(`/`)
 		verifyEq(response.statusCode, 200)
 		
-		h1	:= client.selectCss("h1").first
-		verifyEq(h1.text.writeToStr, "Bed Nap Hotel")
+		h1	:= client.selectCss("h1")
+		h1.verifyTextContains("Bed Nap Hotel")
 
 		h2	:= client.selectCss("h2.panel-title")
-		verifyEq(h2[0].text.writeToStr, "Add a comment")
-		verifyEq(h2[1].text.writeToStr, "Visitor Comments")
+		h2[0].verifyText("Add a comment")
+		h2[1].verifyText("Visitor Comments")
 		
-		overview	:= client.selectCss("#overview").first
-		verifyEq(overview.text.writeToStr.trim, "Overview")
+		overview	:= client.selectCss("#overview")
+		overview.verifyText("Overview")
 	}
 	
 	Void testListRendering() {
@@ -41,15 +40,15 @@ internal class TestIndexPage : BedNapTest {
 		verifyEq(response.statusCode, 200)
 
 		tableRows := client.selectCss("table > tbody > tr")
-		verifyEq(tableRows.size, 2)
-		
-		row1 := Sizzle().selectFromElem(tableRows[0], "td")
-		verifyEq(row1[0].text.writeToStr, "of-9")
-		verifyEq(row1[2].text.writeToStr, "Awesome")
+		tableRows.verifySize(2)
 
-		row2 := Sizzle().selectFromElem(tableRows[1], "td")
-		verifyEq(row2[0].text.writeToStr, "Emma")
-		verifyEq(row2[2].text.writeToStr, "Groovy")
+		row1 := tableRows[0].find("td")
+		row1[0].verifyText("of-9")
+		row1[2].verifyText("Awesome")
+		
+		row2 := tableRows[1].find("td")
+		row2[0].verifyText("Emma")
+		row2[2].verifyText("Groovy")
 	}
 
 	Void testAddComment() {

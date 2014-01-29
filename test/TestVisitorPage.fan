@@ -17,10 +17,10 @@ internal class TestVisitorPage: BedNapTest {
 		response := client.get(`/visitor/666`)
 		verifyEq(response.statusCode, 200)
 		
-		said := client.selectCss("p.lead").first
-		verifyEq(said.text.writeToStr, "Judge Dredd said:")
+		said := client.selectCss("p.lead")
+		said.verifyText("Judge Dredd said:")
 
-		quote := client.selectCss("blockquote p").first
-		verifyEq(quote.text.writeToStr, "I am the law!")
+		quote := client.selectCss("blockquote p")
+		quote.verifyText("I am the law!")
 	}
 }
