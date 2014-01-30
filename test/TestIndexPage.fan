@@ -1,5 +1,6 @@
 using afIoc
 using afButter
+using afBounce
 
 internal class TestIndexPage : BedNapTest {
 
@@ -9,15 +10,16 @@ internal class TestIndexPage : BedNapTest {
 		response := client.get(`/`)
 		verifyEq(response.statusCode, 200)
 		
-		h1	:= client.selectCss("h1")
+		h1	:= Element("h1")
 		h1.verifyTextContains("Bed Nap Hotel")
 
-		h2	:= client.selectCss("h2.panel-title")
-		h2[0].verifyText("Add a comment")
-		h2[1].verifyText("Visitor Comments")
+		h2	:= Element("h2.panel-title")
+		h20 := h2[0]
+		h20.verifyTextEq("Add a comment")
+		h2[1].verifyTextEq("Visitor Comments")
 		
-		overview	:= client.selectCss("#overview")
-		overview.verifyText("Overview")
+		overview	:= Element("#overview")
+		overview.verifyTextEq("Overview")
 	}
 	
 	Void testListRendering() {
@@ -39,16 +41,16 @@ internal class TestIndexPage : BedNapTest {
 		response := client.get(`/`)
 		verifyEq(response.statusCode, 200)
 
-		tableRows := client.selectCss("table > tbody > tr")
-		tableRows.verifySize(2)
+		tableRows := Element("table > tbody > tr")
+		tableRows.verifySizeEq(2)
 
 		row1 := tableRows[0].find("td")
-		row1[0].verifyText("of-9")
-		row1[2].verifyText("Awesome")
+		row1[0].verifyTextEq("of-9")
+		row1[2].verifyTextEq("Awesome")
 		
 		row2 := tableRows[1].find("td")
-		row2[0].verifyText("Emma")
-		row2[2].verifyText("Groovy")
+		row2[0].verifyTextEq("Emma")
+		row2[2].verifyTextEq("Groovy")
 	}
 
 	Void testAddComment() {

@@ -1,4 +1,5 @@
 using afIoc
+using afBounce
 
 internal class TestVisitorPage: BedNapTest {
 
@@ -14,13 +15,12 @@ internal class TestVisitorPage: BedNapTest {
 			it.visitedOn	= DateTime.now
 		})
 		
-		response := client.get(`/visitor/666`)
-		verifyEq(response.statusCode, 200)
+		client.get(`/visitor/666`)
 		
-		said := client.selectCss("p.lead")
-		said.verifyText("Judge Dredd said:")
+		said := Element("p.lead")
+		said.verifyTextEq("Judge Dredd said:")
 
-		quote := client.selectCss("blockquote p")
-		quote.verifyText("I am the law!")
+		quote := Element("blockquote p")
+		quote.verifyTextEq("I am the law!")
 	}
 }
