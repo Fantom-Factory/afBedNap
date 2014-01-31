@@ -57,7 +57,12 @@ internal class TestIndexPage : BedNapTest {
 		bookService.clear
 		
 		client.followRedirects.enabled = false
-		response := client.postForm(`/make`, ["name" : "Judge Dredd", "comment" : "I am the law!"])
+		client.get(`/`)
+		
+		TextBox("#name").value = "Judge Dredd"
+		TextBox("#comment").value = "I am the law!"	
+		response := Button("[type=submit]").click
+		
 		verifyEq(response.statusCode, 303)
 		verifyEq(response.headers.location, `/`)
 		
