@@ -100,6 +100,7 @@ Release Notes [#releaseNotes]
 v0.0.6 [#v0.0.6]
 ----------------
  - Chg: Pages are served up with an XHTML5 content type.
+ - Chg: Tests updated to use new versions of [Butter]`http://www.fantomfactory.org/pods/afButter` and [Bounce]`http://www.fantomfactory.org/pods/afBounce`.
 
 v0.0.4 [#v0.0.4]
 ----------------

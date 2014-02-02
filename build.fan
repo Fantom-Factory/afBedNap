@@ -6,7 +6,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it kickstart your own Bed Apps!"
-		version = Version("0.0.5")
+		version = Version("0.0.6")
 
 		meta	= [
 			"org.name"		: "Alien-Factory",
@@ -15,7 +15,7 @@ class Build : BuildPod {
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbednap",
 			"license.name"	: "BSD 2-Clause License",	
-			"repo.private"	: "true",
+			"repo.private"	: "false",
 
 			"afIoc.module"	: "afBedNap::AppModule"
 		]
@@ -39,9 +39,9 @@ class Build : BuildPod {
 			"afSlim 1.1.2+",
 	
 			// for testing
-			"afButter 0.0.2+",
-			"afBounce 0.0.4+",
-			"afSizzle 0.0.2+",
+			"afButter 0.0.4+",
+			"afBounce 0.0.6+",
+			"afSizzle 1.0.0+",
 			"xml 1.0",
 		]
 

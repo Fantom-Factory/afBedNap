@@ -61,7 +61,7 @@ internal class TestIndexPage : BedNapTest {
 		
 		TextBox("#name").value = "Judge Dredd"
 		TextBox("#comment").value = "I am the law!"	
-		response := Button("[type=submit]").click
+		response := SubmitButton("[type=submit]").click
 		
 		verifyEq(response.statusCode, 303)
 		verifyEq(response.headers.location, `/`)
