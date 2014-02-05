@@ -16,7 +16,6 @@ const class AppModule {
  
 	@Contribute { serviceType=Routes# }
 	static Void contributeRoutes(OrderedConfig config) {
-		config.add(Route(`/make`, 	 VisitorBookService#makeVisitor, "POST"))
 		config.add(Route(`/src/***`, SourceCodePage#service))
 	}
  
