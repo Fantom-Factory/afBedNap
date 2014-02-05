@@ -98,6 +98,8 @@ Release Notes [#releaseNotes]
 *****************************
 v0.0.8 [#v0.0.8]
 ----------------
+ - Chg: Updated to use [Pillow-0.0.10]`http://www.fantomfactory.org/pods/afButter`.
+ - Chg: Vistor creation is now done in a Pillow Page Event.
  - Bug: Submit button did not have a name.
 
 v0.0.6 [#v0.0.6]

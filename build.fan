@@ -6,7 +6,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it kickstart your own Bed Apps!"
-		version = Version("0.0.6")
+		version = Version("0.0.8")
 
 		meta	= [
 			"org.name"		: "Alien-Factory",
@@ -32,10 +32,10 @@ class Build : BuildPod {
 			"afIocEnv 1.0.0+", 
 
 			// web stuff
-			"afBedSheet 1.3.0+", 
+			"afBedSheet 1.3.2+", 
 			"afEfan 1.3.6.2+",
-			"afEfanXtra 1.0.8+",
-			"afPillow 0.0.8+",
+			"afEfanXtra 1.0.10+",
+			"afPillow 0.0.10+",
 			"afSlim 1.1.2+",
 	
 			// for testing

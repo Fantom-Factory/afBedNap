@@ -1,19 +1,44 @@
 using afIoc::Inject
 using afPillow::Page
+using afPillow::PageContext
+using afPillow::PageEvent
+using afPillow::PageMeta
+using afEfanXtra::EfanComponent
 using afEfanXtra::InitRender
 using afBedSheet::Text
 using afBedSheet::ValueEncoder
+using afBedSheet::HttpRequest
+using afBedSheet::Redirect
 
 ** (Pillow page) The main application page.
-const mixin IndexPage : Page {
+@Page
+const mixin IndexPage : EfanComponent {
 	@Inject abstract VisitorBookService	visitorBook
-	@Inject abstract SampleData sampleData
+	@Inject abstract SampleData 		sampleData
+	@Inject	abstract HttpRequest		httpRequest
+	@Inject	abstract PageMeta			pageMeta
 
 	abstract Visitor sample
 	
 	@InitRender
 	Void initRender() {
 		sample = sampleData.createSampleVisitor
+	}
+
+	Uri createUri() {
+		return pageMeta.eventUri("create", null)
+	}
+	
+	@PageEvent { httpMethod="POST" }
+	Redirect create() {
+		visitor := Visitor() {
+			it.name			= httpRequest.form["name"]
+			it.comment		= httpRequest.form["comment"]
+			it.visitedOn	= DateTime.now
+		}
+		visitorBook.add(visitor)
+		
+		return Redirect.afterPost(pageMeta.pageUri)
 	}
 	
 	Str version() {
@@ -31,13 +56,10 @@ const class SourceCodePage {
 }
 
 ** (Pillow page) Displays a `Visitor` entity in full.
-const mixin VisitorPage : Page {
-	abstract Visitor visitor
-	
-	@InitRender
-	Void initRender(Visitor visitor) {
-		this.visitor = visitor
-	}
+@Page
+const mixin VisitorPage : EfanComponent {
+	@PageContext
+	abstract Visitor visitor	
 }
 
 ** Converts `Visitor` objects to and from a 'Str'.
