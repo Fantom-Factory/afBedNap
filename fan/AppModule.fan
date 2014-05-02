@@ -1,3 +1,4 @@
+using concurrent
 using afIoc
 using afIocConfig
 using afBedSheet
@@ -29,8 +30,13 @@ const class AppModule {
 		config.add |->| { sampleData.createSampleData() }
 	}
 
+	@Contribute { serviceType=ActorPools# }
+	static Void contributeActorPools(MappedConfig config) {
+		config["afBedNap.visitorBook"] = ActorPool()
+	}
 
-
+	
+	
 	// ---- Serve Up Files from `etc/web/` --------------------------------------------------------
 	
 	@Contribute { serviceType=FileHandler# }
