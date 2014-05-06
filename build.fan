@@ -5,7 +5,7 @@ class Build : BuildPod {
 
 	new make() {
 		podName = "afBedNap"
-		summary = "A simple BedSheet application; use it kickstart your own Bed Apps!"
+		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
 		version = Version("0.0.9")
 
 		meta = [
@@ -17,6 +17,7 @@ class Build : BuildPod {
 			"license.name"	: "The MIT Licence",	
 			"repo.private"	: "true",
 
+			"tags"			: "templating, testing, web",
 			"afIoc.module"	: "afBedNap::AppModule"
 		]
 
