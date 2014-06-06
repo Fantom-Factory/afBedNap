@@ -48,7 +48,7 @@ const class AppModule {
 	
 	// ---- Add efan Template Directories ---------------------------------------------------------
 	
-	@Contribute { serviceType=EfanTemplateDirectories# }
+	@Contribute { serviceType=TemplateDirectories# }
 	static Void contributeEfanDirs(OrderedConfig config) {
 		addRecursive(config, `etc/pages/`.toFile)
 		addRecursive(config, `etc/components/`.toFile)
@@ -69,7 +69,7 @@ const class AppModule {
 		Slim(TagStyle.xhtml)
 	}
 
-	@Contribute { serviceType=EfanTemplateConverters# }
+	@Contribute { serviceType=TemplateConverters# }
 	internal static Void contributeEfanTemplateConverters(MappedConfig config, Slim slim) {
 		config["slim"] = |File file -> Str| { slim.parseFromFile(file) }
 	}

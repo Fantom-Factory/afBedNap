@@ -19,7 +19,7 @@ internal abstract class BedNapTest : Test {
 }
 
 internal class WebTestModule {
-    @Contribute { serviceType=ServiceOverride# }
+    @Contribute { serviceType=ServiceOverrides# }
     static Void contributeServiceOverride(MappedConfig config) {
         config["IocEnv"] = IocEnv.fromStr("Testing")
     }
