@@ -40,14 +40,17 @@
 						th	Visited On
 						th	Comment
 						th
+						th
 				tbody
 					-- visitorBook.all.each |visitor|
 						tr
 							td	${visitor.name}
-							td	${visitor.visitedOn.toLocale("DD MMM YYYY")}
+							td	${visitor.visitedOn.toLocale("D MMM YYYY")}
 							td	${visitor.commentAbbr}
 							td
-								a (href="/visitor/${visitor.id}") view
+								a [id="delete-${visitor.id}" href="${deleteVisitorUri(visitor)}"] delete
+							td
+								a [href="${viewVisitorUri(visitor)}"] view
 
 
 	-- app.renderOverview

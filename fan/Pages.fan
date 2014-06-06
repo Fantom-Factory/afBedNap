@@ -1,5 +1,6 @@
 using afIoc::Inject
 using afPillow::Page
+using afPillow::Pages
 using afPillow::PageContext
 using afPillow::PageEvent
 using afPillow::PageMeta
@@ -16,19 +17,38 @@ const mixin IndexPage : EfanComponent {
 	@Inject abstract VisitorBookService	visitorBook
 	@Inject abstract SampleData 		sampleData
 	@Inject	abstract HttpRequest		httpRequest
+	@Inject	abstract Pages				pages
 	@Inject	abstract PageMeta			pageMeta
 
 	abstract Visitor sample
 	
+	// ---- Rendering -----------------------------------------------------------------------------
+
 	@InitRender
 	Void initRender() {
 		sample = sampleData.createSampleVisitor
 	}
 
 	Uri createUri() {
-		return pageMeta.eventUri("create", null)
+		pageMeta.eventUri(#create.name)
+	}
+
+	Uri viewVisitorUri(Visitor visitor) {
+		pages[VisitorPage#].withContext([visitor]).pageUri
 	}
 	
+	Uri deleteVisitorUri(Visitor visitor) {
+		pageMeta.eventUri(#delete.name, [visitor])
+	}
+	
+	Str version() {
+		IndexPage#.pod.version.toStr
+	}
+
+	
+	
+	// ---- Events --------------------------------------------------------------------------------
+		
 	@PageEvent { httpMethod="POST" }
 	Redirect create() {
 		visitor := Visitor() {
@@ -40,19 +60,13 @@ const mixin IndexPage : EfanComponent {
 		
 		return Redirect.afterPost(pageMeta.pageUri)
 	}
-	
-	Str version() {
-		IndexPage#.pod.version.toStr
-	}
-}
 
-** Returns the given source file as plain text.
-** Note this is not a Pillow Page but a Route Request handler.
-const class SourceCodePage {
-	// Ensure a plain text Mime Type, as most browsers don't know what 'text/fandoc' is!
-	Obj service(Uri file) {
-		return Text.fromPlain(file.toFile.readAllStr)
+	@PageEvent
+	Redirect delete(Visitor visitor) {
+		visitorBook.delete(visitor)		
+		return Redirect.afterPost(pageMeta.pageUri)
 	}
+	
 }
 
 ** (Pillow page) Displays a `Visitor` entity in full.
@@ -60,6 +74,15 @@ const class SourceCodePage {
 const mixin VisitorPage : EfanComponent {
 	@PageContext
 	abstract Visitor visitor	
+}
+
+** Returns the given source file as plain text.
+** Note this is not a Pillow Page but a *Route Handler*.
+const class SourceCodePage {
+	// Ensure a plain text Mime Type, as most browsers don't know what 'text/fandoc' is!
+	Obj service(Uri file) {
+		return Text.fromPlain(file.toFile.readAllStr)
+	}
 }
 
 ** Converts `Visitor` objects to and from a 'Str'.

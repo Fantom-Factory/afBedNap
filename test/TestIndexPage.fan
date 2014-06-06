@@ -54,8 +54,6 @@ internal class TestIndexPage : BedNapTest {
 	}
 
 	Void testAddComment() {
-		bookService.clear
-		
 		client.followRedirects.enabled = false
 		client.get(`/`)
 		
@@ -69,5 +67,24 @@ internal class TestIndexPage : BedNapTest {
 		verifyEq(bookService.all.size, 1)
 		verifyEq(bookService.all[0].name, "Judge Dredd")
 		verifyEq(bookService.all[0].comment, "I am the law!")
+	}
+
+	Void testDeleteComment() {
+		visitor := bookService.add(Visitor() {
+			it.id			= 1
+			it.name			= "Emma"
+			it.comment		= "Groovy"
+			it.visitedOn	= DateTime.now
+		})
+
+		client.get(`/`)
+		
+		verifyEq(bookService.all.size, 1)
+		Element("table > tbody > tr").verifySizeEq(1)
+		
+		Link("#delete-${visitor.id}").click
+		
+		verifyEq(bookService.all.size, 0)
+		Element("table > tbody > tr").verifySizeEq(0)		
 	}
 }

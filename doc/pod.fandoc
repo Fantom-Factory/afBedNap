@@ -1,11 +1,11 @@
 
 Overview [#overview]
 ********************
-'BedNap' is a simple [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` application with master / detail screens that
+'BedNap' is a simple [BedSheet]`pod:afBedSheet` application with master / detail screens that
 can be used as a template to kickstart your own Bed Apps.
 
 'BedNap' exists so developers can browse the source code and see for themselves how easy it is to piece together a
-working application with [BedSheet]`http://www.fantomfactory.org/pods/afBedSheet` and other libraries.
+working application with [BedSheet]`pod:afBedSheet` and other libraries.
 'Bed Nap' also features acceptance tests that probe the generated HTML and verifies the markup.
 
 
@@ -15,7 +15,7 @@ Quick Start [#quickStart]
 
 1. Install [#install]
 =====================
-Install 'Bed Nap' with the [Fantom Repository Manager]`http://fantom.org/doc/docFanr/Tool.html#install`:
+Install 'Bed Nap' with the [Fantom Repository Manager]`docFanr::Tool.install`:
 
   C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
 
@@ -49,7 +49,7 @@ To build, move in to the directory you've just created and run:
       WritePod [file:/C:/Apps/Fantom/fan/lib/fan/myBedApp.pod]
   BUILD SUCCESS [451ms]!
 
-Test the app with [fant]`http://fantom.org/doc/docTools/Fant.html`:
+Test the app with [fant]`docTools::Fant`:
 
   C:\projects\myBedApp> fant myBedApp
 
@@ -62,10 +62,10 @@ Run the web application with:
   C:\projects\myBedApp> fan myBedApp
 
      ___    __                 _____        _
-    / _ |  / /  _____  _____  / ___/__  ___/ /_________  __ __
-   / _  | / /_ / / -_|/ _  / / __// _ \/ _/ __/ _  / __|/ // /
-  /_/ |_|/___//_/\__|/_//_/ /_/   \_,_/__/\__/____/_/   \_, /
-           Alien-Factory BedSheet v1.3.0, IoC v1.5.2 /___/
+    / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
+   / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
+  /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
+             Alien-Factory BedSheet v1.3.6, IoC v1.6.2 /___/
 
   BedSheet started up in 1,809ms
 
@@ -96,16 +96,20 @@ You can also view the source code over at BitBucket at: `https://bitbucket.org/A
 
 Release Notes [#releaseNotes]
 *****************************
+v0.0.10 [#v0.0.10]
+------------------
+ - New: Added vistor delete link to table, an example of event links.
+ - Chg: Updated libraries to newer versions.
+
 v0.0.8 [#v0.0.8]
 ----------------
- - Chg: Updated to use [Pillow-0.0.10]`http://www.fantomfactory.org/pods/afButter`.
  - Chg: Vistor creation is now done in a Pillow Page Event.
  - Bug: Submit button did not have a name.
 
 v0.0.6 [#v0.0.6]
 ----------------
  - Chg: Pages are served up with an XHTML5 content type.
- - Chg: Tests updated to use new versions of [Butter]`http://www.fantomfactory.org/pods/afButter` and [Bounce]`http://www.fantomfactory.org/pods/afBounce`.
+ - Chg: Tests updated to use new versions of [Butter]`pod:afButter` and [Bounce]`pod:afBounce`.
 
 v0.0.4 [#v0.0.4]
 ----------------

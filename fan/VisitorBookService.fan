@@ -24,9 +24,14 @@ const class VisitorBookService {
 		visitorBook.get(id)
 	}
 	
-	Void add(Visitor visitor) {
+	Visitor add(Visitor visitor) {
 		id := visitor.id ?: idGenerator.nextId
 		visitorBook.set(id, visitor.withId(id))
+		return visitor
+	}
+	
+	Void delete(Visitor visitor) {
+		visitorBook.remove(visitor.id)
 	}
 	
 	Void clear() {
