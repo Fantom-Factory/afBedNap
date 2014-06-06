@@ -1,0 +1,6 @@
+bin/
+build/
+.hg/
+*.zip
+*.pptx
+*.exe
