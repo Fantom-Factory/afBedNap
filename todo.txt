@@ -1,2 +1,2 @@
 
-Add edit page when afPillow can create event handlers, and use @PageContexts
+Add edit page when afPillow can create event handlers

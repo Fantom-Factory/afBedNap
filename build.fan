@@ -6,19 +6,14 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
-		version = Version("0.0.9")
+		version = Version("0.0.10")
 
 		meta = [
-			"org.name"		: "Alien-Factory",
-			"org.uri"		: "http://www.alienfactory.co.uk/",
 			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
-			"vcs.uri"		: "https://bitbucket.org/AlienFactory/afbednap",
-			"license.name"	: "The MIT Licence",	
-			"repo.private"	: "true",
-
+			"afIoc.module"	: "afBedNap::AppModule",
 			"tags"			: "templating, testing, web",
-			"afIoc.module"	: "afBedNap::AppModule"
+			"repo.private"	: "false"
 		]
 
 		depends = [	
@@ -37,14 +32,14 @@ class Build : BuildPod {
 			"afBedSheet 1.3.6+", 
 			"afEfan 1.4.0.1+",
 			"afEfanXtra 1.1.4+",
-			"afPillow 1.0.6+",	// FIXME!
+			"afPillow 1.0.8+",
 			"afSlim 1.1.4+",
 	
 			// for testing
 			"afBounce 1.0.0+",
 			"afButter 0.0.6+",
 			"afSizzle 1.0.0+",
-			"xml 1.0",
+			"xml 1.0"
 		]
 
 		srcDirs = [`test/`, `fan/`]
