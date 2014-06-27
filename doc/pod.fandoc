@@ -80,7 +80,7 @@ Release Notes  [#releaseNotes]
 ******************************
 v0.0.12  [#v0.0.12]
 -------------------
-- New: Added [Duvet]`http://www.fantomfactory.org/pods/afDuvet`, [ColdFeet]`http://repo.status302.com/doc/afBedNap/afColdFeet.html` and [Google Analytics]`http://repo.status302.com/doc/afBedNap/afGoogleAnalytics.html`.
+- New: Added [Duvet]`http://www.fantomfactory.org/pods/afDuvet`, [ColdFeet]`http://www.fantomfactory.org/pods/afColdFeet` and [Google Analytics]`http://www.fantomfactory.org/pods/afGoogleAnalytics`.
 - Chg: Updated libraries to newer versions.
 
 v0.0.10  [#v0.0.10]
