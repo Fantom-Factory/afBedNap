@@ -1,6 +1,9 @@
+using afIoc::Inject
 using afEfanXtra::EfanComponent
 using afEfanXtra::EfanTemplate
 using afEfanXtra::InitRender
+using afBedSheet::FileHandler
+using afDuvet::HtmlInjector
 
 ** (efan component) Displays the source code tree.
 const mixin FileTree : EfanComponent {
@@ -16,9 +19,17 @@ const mixin Footer : EfanComponent { }
 const mixin Layout : EfanComponent {
 	abstract Str? pageTitle
 
+	@Inject abstract FileHandler 	fileHander
+	@Inject abstract HtmlInjector	injector
+	
 	@InitRender
 	Void init(Str pageTitle) {
 		this.pageTitle = pageTitle
+		injector.injectStylesheet.fromServerFile(File(`etc/web/css/bootstrap.min.css`))
+	}
+	
+	Uri asset(Uri localFile) {
+		fileHander.fromServerFile(File(localFile)).clientUrl
 	}
 }
 
