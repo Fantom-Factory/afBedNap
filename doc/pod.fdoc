@@ -98,7 +98,7 @@ Release Notes [#releaseNotes]
 *****************************
 v0.0.12 [#v0.0.12]
 ------------------
- - New: Added [Duvet]`pod:afDuvet`, [ColdFeet]`afColdFeet` and [Google Analytics]`afGoogleAnalytics`.
+ - New: Added [Duvet]`pod:afDuvet`, [ColdFeet]`pod:afColdFeet` and [Google Analytics]`pod:afGoogleAnalytics`.
  - Chg: Updated libraries to newer versions.
 
 v0.0.10 [#v0.0.10]
