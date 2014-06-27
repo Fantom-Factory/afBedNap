@@ -1,12 +1,13 @@
 doctype html
 html (xmlns="http://www.w3.org/1999/xhtml")
 	head
-		title ${pageTitle} :: Bed Nap App		
-		link (rel="stylesheet" type="text/css" href="/css/bootstrap.min.css")		
-		link (rel="shortcut icon" href="/favicon.ico")
+		title ${pageTitle} :: Bed Nap App
+		link [rel="shortcut icon" href="${asset(`etc/web/favicon.ico`)}"]
 		
 	body
 		main.container
 			-- renderBody
 
 			-- app.renderFooter
+
+			-- afGa.renderGoogleAnalytics

@@ -53,7 +53,7 @@ Run the web application with:
       / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
      / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
     /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
-               Alien-Factory BedSheet v1.3.6, IoC v1.6.2 /___/
+              Alien-Factory BedSheet v1.3.10, IoC v1.6.4 /___/
     
     BedSheet started up in 1,809ms
 

@@ -1,9 +1,11 @@
 using concurrent
 using afIoc
 using afIocConfig
+using afIocEnv
 using afBedSheet
 using afEfanXtra
 using afSlim
+using afGoogleAnalytics
 
 ** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module class.
 const class AppModule {
@@ -24,15 +26,23 @@ const class AppModule {
 	static Void contributeValueEncoders(MappedConfig config) {
 		config[Visitor#] = config.autobuild(VisitorValueEncoder#)
 	}
+
+	@Contribute { serviceType=ActorPools# }
+	static Void contributeActorPools(MappedConfig config) {
+		config["afBedNap.visitorBook"] = ActorPool() { it.name = "afBedNap.visitorBook" }
+	}
  
 	@Contribute { serviceType=RegistryStartup# }
 	static Void contributeRegistryStartup(OrderedConfig config, SampleData sampleData) {
 		config.add |->| { sampleData.createSampleData() }
 	}
 
-	@Contribute { serviceType=ActorPools# }
-	static Void contributeActorPools(MappedConfig config) {
-		config["afBedNap.visitorBook"] = ActorPool()
+	@Contribute { serviceType=ApplicationDefaults# }
+	static Void contributeAppDefaults(MappedConfig config, IocEnv env) {
+		if (env.isProd)
+			config[BedSheetConfigIds.host]				= "http://bednap.fantomfactory.org"
+		config[GoogleAnalyticsConfigIds.accountNumber]	= Env.cur.vars["afGoogleAnalytics.accNo"] ?: ""
+		config[GoogleAnalyticsConfigIds.accountDomain]	= "//bednap.fantomfactory.org"
 	}
 
 	
