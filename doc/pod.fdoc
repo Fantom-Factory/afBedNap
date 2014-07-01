@@ -96,6 +96,12 @@ You can also view the source code over at BitBucket at: `https://bitbucket.org/A
 
 Release Notes [#releaseNotes]
 *****************************
+v0.0.14 [#v0.0.14]
+------------------
+ - Chg: Split app and docs up into 2 pages.
+ - Bug: Test code is included (once again) in the '.pod'.
+ - Bug: All pods are included and upto date in generated 'build.fan'.
+
 v0.0.12 [#v0.0.12]
 ------------------
  - New: Added [Duvet]`pod:afDuvet`, [ColdFeet]`pod:afColdFeet` and [Google Analytics]`pod:afGoogleAnalytics`.

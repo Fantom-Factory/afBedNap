@@ -40,7 +40,10 @@ class Main : AbstractMain {
 		if (!isPodNameLegal)
 			return err("'${podname}' is not a legal podname - [A-Za-z0-9] only")
 		
-		if (!copyto.exists || !copyto.isDir)
+		if (!copyto.exists)
+			return err("`${copyto.osPath}` does not exist")
+		
+		if (!copyto.isDir)
 			return err("`${copyto.osPath}` is not a directory")
 		
 		copyto = copyto.createDir(podname)

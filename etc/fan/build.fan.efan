@@ -8,7 +8,7 @@ class Build : BuildPod {
 		summary = "A simple BedSheet application"
 		version = Version("0.0.1")
 
-		meta	= [
+		meta = [
 			"org.name"		: "Fantom-Factory",
 			"org.uri"		: "http://www.fantomfactory.org/",
 			"afIoc.module"	: "<%= ctx["podname"] %>::AppModule"
@@ -21,22 +21,25 @@ class Build : BuildPod {
 			"fandoc 1.0",
 
 			// core Ioc
-			"afConcurrent 1.0.4", 
-			"afIoc 1.6.2", 
-			"afIocConfig 1.0.6", 
-			"afIocEnv 1.0.4", 
+			"afConcurrent 1.0.6+", 
+			"afIoc 1.6.4+", 
+			"afIocConfig 1.0.8+", 
+			"afIocEnv 1.0.6+", 
 
 			// web stuff
-			"afBedSheet 1.3.6", 
-			"afEfan 1.4.0.1",
-			"afEfanXtra 1.1.4",
-			"afPillow 1.0.8",
-			"afSlim 1.1.4",
+			"afBedSheet 1.3.10+", 
+			"afEfan 1.4.0.1+",
+			"afEfanXtra 1.1.6+",
+			"afPillow 1.0.10+",
+			"afSlim 1.1.8+",
+			"afColdFeet 1.2.0+",
+			"afDuvet 0.0.6+",
+			"afGoogleAnalytics 0.0.4+",
 	
 			// for testing
-			"afBounce 1.0.0",
-			"afButter 0.0.6",
-			"afSizzle 1.0.0",
+			"afBounce 1.0.6+",
+			"afButter 1.0.0+",
+			"afSizzle 1.0.0+",
 			"xml 1.0"
 		]
 
