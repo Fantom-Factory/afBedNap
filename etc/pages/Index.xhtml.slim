@@ -1,56 +1,14 @@
 -- app.renderLayout("Welcome!")
 
-	div.page-header
-		h1	Bed Nap Hotel
-			small |  v${version} - An Example Bed App
+	p &#160;
 
-	p	Thanks for staying at the Bed Nap Hotel! 
-
-	div.panel.panel-info
-		div.panel-heading
-			h2.panel-title Add a comment
-		div.panel-body
-			p	Feel free to leave a comment below! 
-				span.text-muted ( ) (Sample text inserted for your convenience.)
-
-			form.form-horizontal (autocomplete="off" method="post" action="${createUri}")
-				div.form-group
-					label.control-label.col-sm-2 (for="name") Name
-					div.col-sm-10
-						input#name.form-control (name="name" type="text" value="${sample.name}")
-				div.form-group
-					label.control-label.col-sm-2 (for="comment") Comment
-					div.col-sm-10
-						textarea#comment.form-control (name="comment") ${sample.comment}
-				div.form-group
-					div.col-sm-offset-2.col-sm-10
-						input.btn.btn-primary (type="submit" name="submit" value="Submit")
-
-
-	div.panel.panel-info
-		div.panel-heading
-			h2.panel-title Visitor Comments
-		div.panel-body
-			p	Read other peoples' comments below:
-
-			table.table.table-striped
-				thead
-					tr
-						th	Name
-						th	Visited On
-						th	Comment
-						th
-						th
-				tbody
-					-- visitorBook.all.each |visitor|
-						tr
-							td	${visitor.name}
-							td	${visitor.visitedOn.toLocale("D MMM YYYY")}
-							td	${visitor.commentAbbr}
-							td
-								a [id="delete-${visitor.id}" href="${deleteVisitorUri(visitor)}"] delete
-							td
-								a [href="${viewVisitorUri(visitor)}"] view
-
+	div.jumbotron
+		h1 Bed Nap 
+			small v${version}
+		p An Example BedSheet Application (BedApp)
+		p
+			a.btn.btn-success.btn-lg (href="${bedNapUrl}" role="button") Visit Bed Nap Hotel >>
+	
+	p.lead Click [ <a href="${bedNapUrl}">&gt; HERE &lt;</a> ] to play with the sample Bed Nap Hotel web application. 
 
 	-- app.renderOverview

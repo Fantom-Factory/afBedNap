@@ -11,9 +11,23 @@ using afBedSheet::ValueEncoder
 using afBedSheet::HttpRequest
 using afBedSheet::Redirect
 
-** (Pillow page) The main application page.
+** (Pillow page) The index / documentation page.
 @Page
 const mixin IndexPage : EfanComponent {
+	@Inject	abstract Pages				pages
+
+	Str version() {
+		IndexPage#.pod.version.toStr
+	}
+	
+	Uri bedNapUrl() {
+		pages[BednapPage#].pageUri
+	}
+}
+
+** (Pillow page) The main application page.
+@Page
+const mixin BednapPage : EfanComponent {
 	@Inject abstract VisitorBookService	visitorBook
 	@Inject abstract SampleData 		sampleData
 	@Inject	abstract HttpRequest		httpRequest
@@ -72,8 +86,14 @@ const mixin IndexPage : EfanComponent {
 ** (Pillow page) Displays a `Visitor` entity in full.
 @Page
 const mixin VisitorPage : EfanComponent {
+	@Inject	abstract Pages				pages
+
 	@PageContext
-	abstract Visitor visitor	
+	abstract Visitor visitor
+	
+	Uri bedNapUrl() {
+		pages[BednapPage#].pageUri
+	}
 }
 
 ** Returns the given source file as plain text.

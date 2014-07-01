@@ -7,7 +7,7 @@ internal class TestIndexPage : BedNapTest {
 	@Inject	VisitorBookService?	bookService
 	
 	Void testIndexRendersOkay() {
-		response := client.get(`/`)
+		response := client.get(`/bednap`)
 		verifyEq(response.statusCode, 200)
 		
 		h1	:= Element("h1")
@@ -17,9 +17,6 @@ internal class TestIndexPage : BedNapTest {
 		h20 := h2[0]
 		h20.verifyTextEq("Add a comment")
 		h2[1].verifyTextEq("Visitor Comments")
-		
-		overview	:= Element("#overview")
-		overview.verifyTextEq("Overview")
 	}
 	
 	Void testListRendering() {
@@ -38,7 +35,7 @@ internal class TestIndexPage : BedNapTest {
 			it.visitedOn	= DateTime.now.plus(1sec)
 		})
 		
-		response := client.get(`/`)
+		response := client.get(`/bednap`)
 		verifyEq(response.statusCode, 200)
 
 		tableRows := Element("table > tbody > tr")
@@ -55,14 +52,14 @@ internal class TestIndexPage : BedNapTest {
 
 	Void testAddComment() {
 		client.followRedirects.enabled = false
-		client.get(`/`)
+		client.get(`/bednap`)
 		
 		TextBox("#name").value = "Judge Dredd"
 		TextBox("#comment").value = "I am the law!"	
 		response := SubmitButton("[type=submit]").click
 		
 		verifyEq(response.statusCode, 303)
-		verifyEq(response.headers.location, `/`)
+		verifyEq(response.headers.location, `/bednap`)
 		
 		verifyEq(bookService.all.size, 1)
 		verifyEq(bookService.all[0].name, "Judge Dredd")
@@ -77,7 +74,7 @@ internal class TestIndexPage : BedNapTest {
 			it.visitedOn	= DateTime.now
 		})
 
-		client.get(`/`)
+		client.get(`/bednap`)
 		
 		verifyEq(bookService.all.size, 1)
 		Element("table > tbody > tr").verifySizeEq(1)
