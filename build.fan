@@ -6,14 +6,14 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
-		version = Version("0.0.15")
+		version = Version("0.0.16")
 
 		meta = [
 			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"afIoc.module"	: "afBedNap::AppModule",
 			"tags"			: "templating, testing, web",
-			"repo.private"	: "true"
+			"repo.private"	: "false"
 		]
 
 		depends = [	
@@ -25,25 +25,25 @@ class Build : BuildPod {
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Core ------------------------
 			"afConcurrent 1.0.6+", 
-			"afIoc 1.6.4+", 
-			"afIocConfig 1.0.8+", 
-			"afIocEnv 1.0.6+", 
+			"afIoc 1.7.2+", 
+			"afIocConfig 1.0.12.1+", 
+			"afIocEnv 1.0.10.1+", 
 
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Web -------------------------
-			"afBedSheet 1.3.10+", 
+			"afBedSheet 1.3.12+", 
 			"afEfan 1.4.0.1+",
-			"afEfanXtra 1.1.6+",
-			"afPillow 1.0.10+",
+			"afEfanXtra 1.1.10.1+",
+			"afPillow 1.0.16+",
 			"afSlim 1.1.8+",
-			"afColdFeet 1.2.0+",
-			"afDuvet 0.0.6+",
-			"afGoogleAnalytics 0.0.4+",
+			"afColdFeet 1.2.2+",
+			"afDuvet 0.0.14+",
+			"afGoogleAnalytics 0.0.6+",
 	
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Test ------------------------
-			"afBounce 1.0.6+",
-			"afButter 1.0.0+",
+			"afBounce 1.0.10+",
+			"afButter 1.0.2+",
 			"afSizzle 1.0.0+",
 			"xml 1.0"
 		]

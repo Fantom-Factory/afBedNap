@@ -21,7 +21,7 @@ const mixin IndexPage : EfanComponent {
 	}
 	
 	Uri bedNapUrl() {
-		pages[BednapPage#].pageUri
+		pages[BednapPage#].pageUrl
 	}
 }
 
@@ -44,15 +44,15 @@ const mixin BednapPage : EfanComponent {
 	}
 
 	Uri createUri() {
-		pageMeta.eventUri(#create.name)
+		pageMeta.eventUrl(#create.name)
 	}
 
 	Uri viewVisitorUri(Visitor visitor) {
-		pages[VisitorPage#].withContext([visitor]).pageUri
+		pages[VisitorPage#].withContext([visitor]).pageUrl
 	}
 	
 	Uri deleteVisitorUri(Visitor visitor) {
-		pageMeta.eventUri(#delete.name, [visitor])
+		pageMeta.eventUrl(#delete.name, [visitor])
 	}
 	
 	Str version() {
@@ -72,13 +72,13 @@ const mixin BednapPage : EfanComponent {
 		}
 		visitorBook.add(visitor)
 		
-		return Redirect.afterPost(pageMeta.pageUri)
+		return Redirect.afterPost(pageMeta.pageUrl)
 	}
 
 	@PageEvent
 	Redirect delete(Visitor visitor) {
 		visitorBook.delete(visitor)		
-		return Redirect.afterPost(pageMeta.pageUri)
+		return Redirect.afterPost(pageMeta.pageUrl)
 	}
 	
 }
@@ -92,7 +92,7 @@ const mixin VisitorPage : EfanComponent {
 	abstract Visitor visitor
 	
 	Uri bedNapUrl() {
-		pages[BednapPage#].pageUri
+		pages[BednapPage#].pageUrl
 	}
 }
 
