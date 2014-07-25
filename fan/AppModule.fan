@@ -18,27 +18,27 @@ const class AppModule {
 	}
  
 	@Contribute { serviceType=Routes# }
-	static Void contributeRoutes(OrderedConfig config) {
+	static Void contributeRoutes(Configuration config) {
 		config.add(Route(`/src/***`, SourceCodePage#service))
 	}
  
 	@Contribute { serviceType=ValueEncoders# }
-	static Void contributeValueEncoders(MappedConfig config) {
+	static Void contributeValueEncoders(Configuration config) {
 		config[Visitor#] = config.autobuild(VisitorValueEncoder#)
 	}
 
 	@Contribute { serviceType=ActorPools# }
-	static Void contributeActorPools(MappedConfig config) {
+	static Void contributeActorPools(Configuration config) {
 		config["afBedNap.visitorBook"] = ActorPool() { it.name = "afBedNap.visitorBook" }
 	}
  
 	@Contribute { serviceType=RegistryStartup# }
-	static Void contributeRegistryStartup(OrderedConfig config, SampleData sampleData) {
+	static Void contributeRegistryStartup(Configuration config, SampleData sampleData) {
 		config.add |->| { sampleData.createSampleData() }
 	}
 
 	@Contribute { serviceType=ApplicationDefaults# }
-	static Void contributeAppDefaults(MappedConfig config, IocEnv env) {
+	static Void contributeAppDefaults(Configuration config, IocEnv env) {
 		if (env.isProd)
 			config[BedSheetConfigIds.host]				= "http://bednap.fantomfactory.org"
 		config[GoogleAnalyticsConfigIds.accountNumber]	= Env.cur.vars["afGoogleAnalytics.accNo"] ?: ""
@@ -50,7 +50,7 @@ const class AppModule {
 	// ---- Serve Up Files from `etc/web/` --------------------------------------------------------
 	
 	@Contribute { serviceType=FileHandler# }
-	static Void contributeFileHandler(MappedConfig config) {
+	static Void contributeFileHandler(Configuration config) {
 		config[`/`] = `etc/web/`
 	}
 
@@ -59,12 +59,12 @@ const class AppModule {
 	// ---- Add efan Template Directories ---------------------------------------------------------
 	
 	@Contribute { serviceType=TemplateDirectories# }
-	static Void contributeEfanDirs(OrderedConfig config) {
+	static Void contributeEfanDirs(Configuration config) {
 		addRecursive(config, `etc/pages/`.toFile)
 		addRecursive(config, `etc/components/`.toFile)
 	}
 	
-	static Void addRecursive(OrderedConfig config, File dir) {
+	static Void addRecursive(Configuration config, File dir) {
 		if (!dir.isDir)
 			throw Err("`${dir.normalize}` is not a directory")
 		dir.walk { if (it.isDir) config.add(it) }
@@ -80,7 +80,7 @@ const class AppModule {
 	}
 
 	@Contribute { serviceType=TemplateConverters# }
-	internal static Void contributeEfanTemplateConverters(MappedConfig config, Slim slim) {
+	internal static Void contributeEfanTemplateConverters(Configuration config, Slim slim) {
 		config["slim"] = |File file -> Str| { slim.parseFromFile(file) }
 	}
 }
