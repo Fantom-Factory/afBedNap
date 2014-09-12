@@ -78,6 +78,10 @@ You can also view the source code over at BitBucket at: [https://bitbucket.org/A
 
 Release Notes  [#releaseNotes]
 ******************************
+v0.0.20  [#v0.0.20]
+-------------------
+- Chg: Updated to [IoC 2.0.0]`http://www.fantomfactory.org/pods/afIoc`.
+
 v0.0.18  [#v0.0.18]
 -------------------
 - Chg: Updated to [IoC 1.7.6]`http://www.fantomfactory.org/pods/afIoc` and [BedSheet 1.3.14]`http://www.fantomfactory.org/pods/afBedSheet`.

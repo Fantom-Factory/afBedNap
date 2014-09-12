@@ -10,11 +10,11 @@ using afGoogleAnalytics
 ** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module class.
 const class AppModule {
 
-	static Void bind(ServiceBinder binder) {
-		binder.bind(IdGenerator#)
-		binder.bind(VisitorBookService#)
+	static Void defineServices(ServiceDefinitions defs) {
+		defs.add(IdGenerator#)
+		defs.add(VisitorBookService#)
 
-		binder.bind(SampleData#)
+		defs.add(SampleData#)
 	}
  
 	@Contribute { serviceType=Routes# }
