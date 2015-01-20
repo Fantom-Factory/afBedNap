@@ -1,7 +1,7 @@
 using afIoc::Inject
 using afEfanXtra::EfanComponent
-using afEfanXtra::EfanLocation
 using afEfanXtra::InitRender
+using afEfanXtra::TemplateLocation
 using afBedSheet::FileHandler
 using afDuvet::HtmlInjector
 
@@ -34,5 +34,5 @@ const mixin Layout : EfanComponent {
 }
 
 ** (efan component) Renders the 'pod.fandoc'.
-@EfanLocation { url=`fan://afBedNap/doc/pod.fandoc`}
+@TemplateLocation { url=`fan://afBedNap/doc/pod.fandoc`}
 const mixin Overview : EfanComponent { }

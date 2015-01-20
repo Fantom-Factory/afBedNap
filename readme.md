@@ -1,18 +1,24 @@
-## Overview 
+#Bed Nap v0.0.22
+---
+[![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
+[![pod: v0.0.22](http://img.shields.io/badge/pod-v0.0.22-yellow.svg)](http://bednap.fantomfactory.com/)
+![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
+
+## Overview
 
 `BedNap` is a simple [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
 
 `BedNap` exists so developers can browse the source code and see for themselves how easy it is to piece together a working application with [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) and other libraries. `Bed Nap` also features acceptance tests that probe the generated HTML and verifies the markup.
 
-## Quick Start 
+## Quick Start
 
-### 1. Install 
+### 1. Install
 
 Install `Bed Nap` with the [Fantom Repository Manager](http://fantom.org/doc/docFanr/Tool.html#install):
 
     C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
 
-### 2. Create 
+### 2. Create
 
 Create your own working web application by replicating `Bed Nap` in to a working directory. Do this with the following command, where `podname` is the name of your web application.
 
@@ -23,11 +29,13 @@ Create your own working web application by replicating `Bed Nap` in to a working
 
 This creates a copy of `Bed Nap` in `C:\projects\myBedApp` with the name `myBedApp`.
 
-### 3. Run 
+### 3. Run
 
 You can now build, test and run your new web app straight away!
 
-To build, move in to the directory you've just created and run:
+#### Build
+
+To build, `cd` into the project directory and run:
 
     C:\projects\myBedApp> fan build.fan
     
@@ -37,6 +45,8 @@ To build, move in to the directory you've just created and run:
         WritePod [file:/C:/Apps/Fantom/fan/lib/fan/myBedApp.pod]
     BUILD SUCCESS [451ms]!
 
+#### Test
+
 Test the app with [fant](http://fantom.org/doc/docTools/Fant.html):
 
     C:\projects\myBedApp> fant myBedApp
@@ -44,6 +54,8 @@ Test the app with [fant](http://fantom.org/doc/docTools/Fant.html):
     ***
     *** All tests passed! [2 tests, 4 methods, 19 verifies]
     ***
+
+#### Run App
 
 Run the web application with:
 
@@ -53,17 +65,17 @@ Run the web application with:
       / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
      / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
     /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
-              Alien-Factory BedSheet v1.3.10, IoC v1.6.4 /___/
+               Alien-Factory BedSheet v1.4.6, IoC v2.0.2 /___/
     
     BedSheet started up in 1,809ms
 
 And point your web browser at: [http://localhost:8069/](http://localhost:8069/)
 
-### 4. Repeat 
+### 4. Repeat
 
 Feel free to modify the fantom source, web templates, and tests. To see the results, just rebuild the pod with `fan build.fan` and refresh your browser!
 
-## Source Code 
+## Source Code
 
 If you can't wait to download `Bed Nap` and create your own working web application, you can browse the source code below. Click on a file to view it:
 

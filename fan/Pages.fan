@@ -80,7 +80,6 @@ const mixin BednapPage : EfanComponent {
 		visitorBook.delete(visitor)		
 		return Redirect.afterPost(pageMeta.pageUrl)
 	}
-	
 }
 
 ** (Pillow page) Displays a `Visitor` entity in full.
@@ -113,12 +112,12 @@ const class VisitorValueEncoder : ValueEncoder {
 	
 	new make(|This|in) { in(this) }
 	
-	override Str toClient(Obj value) {
+	override Str toClient(Obj? value) {
 		visitor := (Visitor) value
 		return visitor.id.toStr
 	}
 
-	override Obj toValue(Str clientValue) {
+	override Obj? toValue(Str clientValue) {
 		return visitorBook.get(clientValue.toInt)
 	}	
 }
