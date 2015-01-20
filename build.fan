@@ -6,14 +6,14 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
-		version = Version("0.0.22")
+		version = Version("0.0.23")
 
 		meta = [
 			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"afIoc.module"	: "afBedNap::AppModule",
 			"tags"			: "templating, testing, web",
-			"repo.private"	: "false"
+			"repo.private"	: "true"
 		]
 
 		depends = [	
