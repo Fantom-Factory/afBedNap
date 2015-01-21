@@ -12,7 +12,7 @@ class Build : BuildPod {
 			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.com/",
 			"afIoc.module"	: "afBedNap::AppModule",
-			"tags"			: "templating, testing, web",
+			"tags"			: "app",
 			"repo.private"	: "true"
 		]
 
