@@ -66,8 +66,8 @@ const mixin BednapPage : EfanComponent {
 	@PageEvent { httpMethod="POST" }
 	Redirect create() {
 		visitor := Visitor() {
-			it.name			= httpRequest.form["name"]
-			it.comment		= httpRequest.form["comment"]
+			it.name			= httpRequest.body.form["name"]
+			it.comment		= httpRequest.body.form["comment"]
 			it.visitedOn	= DateTime.now
 		}
 		visitorBook.add(visitor)
