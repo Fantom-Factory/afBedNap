@@ -1,7 +1,7 @@
-#Bed Nap v0.0.22
+#Bed Nap v0.0.24
 ---
 [![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
-[![pod: v0.0.22](http://img.shields.io/badge/pod-v0.0.22-yellow.svg)](http://bednap.fantomfactory.com/)
+[![pod: v0.0.24](http://img.shields.io/badge/pod-v0.0.24-yellow.svg)](http://bednap.fantomfactory.com/)
 ![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
 
 ## Overview
@@ -65,7 +65,7 @@ Run the web application with:
       / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
      / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
     /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
-               Alien-Factory BedSheet v1.4.6, IoC v2.0.2 /___/
+               Alien-Factory BedSheet v1.4.8, IoC v2.0.6 /___/
     
     BedSheet started up in 1,809ms
 
