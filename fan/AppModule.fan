@@ -7,7 +7,7 @@ using afEfanXtra
 using afSlim
 using afGoogleAnalytics
 
-** The [afIoc]`http://repo.status302.com/doc/afIoc/#overview` module class.
+** The [afIoc]`pod:afIoc` module class.
 const class AppModule {
 
 	static Void defineServices(ServiceDefinitions defs) {

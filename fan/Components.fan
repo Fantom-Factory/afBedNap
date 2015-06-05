@@ -1,4 +1,5 @@
 using afIoc::Inject
+using afIocConfig::Config
 using afEfanXtra::EfanComponent
 using afEfanXtra::InitRender
 using afEfanXtra::TemplateLocation
@@ -21,6 +22,8 @@ const mixin Layout : EfanComponent {
 
 	@Inject abstract FileHandler 	fileHander
 	@Inject abstract HtmlInjector	injector
+	@Config { id="afGoogleAnalytics.accountNumber" }
+	@Inject abstract Str			gaAccNo
 	
 	@InitRender
 	Void init(Str pageTitle) {
@@ -30,6 +33,10 @@ const mixin Layout : EfanComponent {
 	
 	Uri asset(Uri localFile) {
 		fileHander.fromServerFile(File(localFile)).clientUrl
+	}
+	
+	Bool gaEnabled() {
+		gaAccNo.size > 0
 	}
 }
 

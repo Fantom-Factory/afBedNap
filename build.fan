@@ -6,14 +6,14 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
-		version = Version("0.0.25")
+		version = Version("0.0.24")
 
 		meta = [
 			"proj.name"		: "Bed Nap",
 			"proj.uri"		: "http://bednap.fantomfactory.org/",
 			"afIoc.module"	: "afBedNap::AppModule",
-			"tags"			: "app",
-			"repo.private"	: "true"
+			"repo.tags"		: "app",
+			"repo.public"	: "true"
 		]
 
 		depends = [	
@@ -49,7 +49,7 @@ class Build : BuildPod {
 		]
 
 		srcDirs = [`test/`, `fan/`]
-		resDirs = [`doc/pod.fandoc`, `doc/about.fdoc`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
+		resDirs = [`doc/`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
 		docApi = true
 		docSrc = true

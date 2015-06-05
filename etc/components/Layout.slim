@@ -10,4 +10,6 @@ html (xmlns="http://www.w3.org/1999/xhtml")
 
 			-- app.renderFooter
 
-			-- afGa.renderGoogleAnalytics
+			// prevent the GA component from printing annoying warns when it doesn't have an Google account number
+			-- if (gaEnabled)
+				-- afGa.renderGoogleAnalytics
