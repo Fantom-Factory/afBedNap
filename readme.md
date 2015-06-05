@@ -1,14 +1,30 @@
 #Bed Nap v0.0.24
 ---
 [![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
-[![pod: v0.0.24](http://img.shields.io/badge/pod-v0.0.24-yellow.svg)](http://bednap.fantomfactory.com/)
+[![pod: v0.0.24](http://img.shields.io/badge/pod-v0.0.24-yellow.svg)](http://bednap.fantomfactory.org/)
 ![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
 
 ## Overview
 
-`BedNap` is a simple [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
+BedNap is a simple [BedSheet](http://pods.fantomfactory.org/pods/afBedSheet/) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
 
-`BedNap` exists so developers can browse the source code and see for themselves how easy it is to piece together a working application with [BedSheet](http://www.fantomfactory.org/pods/afBedSheet) and other libraries. `Bed Nap` also features acceptance tests that probe the generated HTML and verifies the markup.
+BedNap exists so developers can browse the source code and see for themselves how easy it is to piece together a working application with [BedSheet](http://pods.fantomfactory.org/pods/afBedSheet/) and other libraries. BedNap also features acceptance tests that probe the generated HTML and verifies the markup.
+
+Visit [http://bednap.fantomfactory.org/](http://bednap.fantomfactory.org/) for a live demo of `Bed Nap`!
+
+## Install
+
+Install `Bed Nap` with the Fantom Repository Manager ( [fanr](http://fantom.org/doc/docFanr/Tool.html#install) ):
+
+    C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
+
+To use in a [Fantom](http://fantom.org/) project, add a dependency to `build.fan`:
+
+    depends = ["sys 1.0", ..., "afBedNap 0.0"]
+
+## Documentation
+
+Full API & fandocs are available on the [Fantom Pod Repository](http://pods.fantomfactory.org/pods/afBedNap/).
 
 ## Quick Start
 
@@ -65,7 +81,7 @@ Run the web application with:
       / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
      / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
     /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
-               Alien-Factory BedSheet v1.4.8, IoC v2.0.6 /___/
+               Alien-Factory BedSheet v1.4.8, IoC v2.0.8 /___/
     
     BedSheet started up in 1,809ms
 

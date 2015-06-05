@@ -1,0 +1,42 @@
+Versions
+********
+
+v0.0.16 - v0.0.24
+=================
+ - Chg: Updated all pods to the latest.
+
+v0.0.14
+=======
+ - Chg: Split app and docs up into 2 pages.
+ - Bug: Test code is included (once again) in the '.pod'.
+ - Bug: All pods are included and upto date in generated 'build.fan'.
+
+v0.0.12
+=======
+ - New: Added [Duvet]`pod:afDuvet`, [ColdFeet]`pod:afColdFeet` and [Google Analytics]`pod:afGoogleAnalytics`.
+ - Chg: Updated libraries to newer versions.
+
+v0.0.10
+=======
+ - New: Added vistor delete link to table, an example of event links.
+ - Chg: Updated libraries to newer versions.
+
+v0.0.8
+======
+ - Chg: Vistor creation is now done in a Pillow Page Event.
+ - Bug: Submit button did not have a name.
+
+v0.0.6
+======
+ - Chg: Pages are served up with an XHTML5 content type.
+ - Chg: Tests updated to use new versions of [Butter]`pod:afButter` and [Bounce]`pod:afBounce`.
+
+v0.0.4
+======
+ - New: Added 'FileTree' component so you can browse the source code, in the application!
+ - Chg: Updated to latest af* library versions & removed workarounds.
+
+v0.0.2
+======
+ - New: Preview release
+
