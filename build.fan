@@ -13,7 +13,7 @@ class Build : BuildPod {
 			"proj.uri"		: "http://bednap.fantomfactory.org/",
 			"afIoc.module"	: "afBedNap::AppModule",
 			"repo.tags"		: "app",
-			"repo.public"	: "false"
+			"repo.public"	: "true"
 		]
 
 		depends = [	

@@ -1,2 +1,2 @@
 
-web: fan afBedSheet afBedNap $PORT
+web: fan afBedSheet afBedNap -port $PORT
