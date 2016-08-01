@@ -1,6 +1,6 @@
 using concurrent::AtomicInt
 using afConcurrent::SynchronizedMap
-using afIoc::ActorPools
+using afConcurrent::ActorPools
 using afIoc::Inject
 using afPillow::Pages
 

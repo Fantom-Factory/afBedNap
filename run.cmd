@@ -1,2 +1,2 @@
 
-fan afBedSheet -proxy afBedNap 8069
+fpm run afBedSheet -proxy afBedNap -port 8069

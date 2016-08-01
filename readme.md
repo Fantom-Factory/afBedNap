@@ -1,14 +1,14 @@
-#Bed Nap v0.0.24
+#Bed Nap v0.1.0
 ---
 [![Written in: Fantom](http://img.shields.io/badge/written%20in-Fantom-lightgray.svg)](http://fantom.org/)
-[![pod: v0.0.24](http://img.shields.io/badge/pod-v0.0.24-yellow.svg)](http://bednap.fantomfactory.org/)
+[![pod: v0.1.0](http://img.shields.io/badge/pod-v0.1.0-yellow.svg)](http://bednap.fantomfactory.org/)
 ![Licence: MIT](http://img.shields.io/badge/licence-MIT-blue.svg)
 
 ## Overview
 
-BedNap is a simple [BedSheet](http://pods.fantomfactory.org/pods/afBedSheet/) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
+BedNap is a simple [BedSheet](http://eggbox.fantomfactory.org/pods/afBedSheet/) application with master / detail screens that can be used as a template to kickstart your own Bed Apps.
 
-BedNap exists so developers can browse the source code and see for themselves how easy it is to piece together a working application with [BedSheet](http://pods.fantomfactory.org/pods/afBedSheet/) and other libraries. BedNap also features acceptance tests that probe the generated HTML and verifies the markup.
+BedNap exists so developers can browse the source code and see for themselves how easy it is to piece together a working application with [BedSheet](http://eggbox.fantomfactory.org/pods/afBedSheet/) and other libraries. BedNap also features acceptance tests that probe the generated HTML and verifies the markup.
 
 Visit [http://bednap.fantomfactory.org/](http://bednap.fantomfactory.org/) for a live demo of `Bed Nap`!
 
@@ -16,11 +16,11 @@ Visit [http://bednap.fantomfactory.org/](http://bednap.fantomfactory.org/) for a
 
 Install `Bed Nap` with the Fantom Repository Manager ( [fanr](http://fantom.org/doc/docFanr/Tool.html#install) ):
 
-    C:\> fanr install -r http://repo.status302.com/fanr/ afBedNap
+    C:\> fanr install -r http://pods.fantomfactory.org/fanr/ afBedNap
 
 To use in a [Fantom](http://fantom.org/) project, add a dependency to `build.fan`:
 
-    depends = ["sys 1.0", ..., "afBedNap 0.0"]
+    depends = ["sys 1.0", ..., "afBedNap 0.1"]
 
 ## Documentation
 
@@ -38,12 +38,12 @@ Install `Bed Nap` with the [Fantom Repository Manager](http://fantom.org/doc/doc
 
 Create your own working web application by replicating `Bed Nap` in to a working directory. Do this with the following command, where `podname` is the name of your web application.
 
-    C:\> fan afBedNap -copyto C:\projects\ -podname myBedApp
+    C:\> fan afBedNap -copyto C:\temp\ -podname myBedApp
     
-    Copied 21 files to 'C:\projects\myBedApp'
+    Copied 21 files to 'C:\temp\myBedApp'
     Bed App 'myBedApp' has been created!
 
-This creates a copy of `Bed Nap` in `C:\projects\myBedApp` with the name `myBedApp`.
+This creates a copy of `Bed Nap` in `C:\temp\myBedApp` with the name `myBedApp`.
 
 ### 3. Run
 
@@ -51,9 +51,9 @@ You can now build, test and run your new web app straight away!
 
 #### Build
 
-To build, `cd` into the project directory and run:
+To build, `cd` into the temp directory and run:
 
-    C:\projects\myBedApp> fan build.fan
+    C:\temp\myBedApp> fan build.fan
     
     compile [myBedApp]
       Compile [myBedApp]
@@ -65,7 +65,7 @@ To build, `cd` into the project directory and run:
 
 Test the app with [fant](http://fantom.org/doc/docTools/Fant.html):
 
-    C:\projects\myBedApp> fant myBedApp
+    C:\temp\myBedApp> fant myBedApp
     
     ***
     *** All tests passed! [2 tests, 4 methods, 19 verifies]
@@ -75,13 +75,13 @@ Test the app with [fant](http://fantom.org/doc/docTools/Fant.html):
 
 Run the web application with:
 
-    C:\projects\myBedApp> fan myBedApp
+    C:\temp\myBedApp> fan myBedApp
     
        ___    __                 _____        _
       / _ |  / /_____  _____    / ___/__  ___/ /_________  __ __
      / _  | / // / -_|/ _  /===/ __// _ \/ _/ __/ _  / __|/ // /
     /_/ |_|/_//_/\__|/_//_/   /_/   \_,_/__/\__/____/_/   \_, /
-               Alien-Factory BedSheet v1.4.8, IoC v2.0.8 /___/
+               Alien-Factory BedSheet v1.5.2, IoC v3.0.2 /___/
     
     BedSheet started up in 1,809ms
 

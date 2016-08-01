@@ -1,6 +1,10 @@
 Versions
 ********
 
+v0.1.0
+======
+ - Chg: Updated to Fantom 1.0.68, BedSheet 1.5, and other latest pods.
+
 v0.0.16 - v0.0.24
 =================
  - Chg: Updated all pods to the latest.
