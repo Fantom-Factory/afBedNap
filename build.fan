@@ -6,7 +6,7 @@ class Build : BuildPod {
 	new make() {
 		podName = "afBedNap"
 		summary = "A simple BedSheet application; use it to kickstart your own Bed Apps!"
-		version = Version("0.0.25")
+		version = Version("0.1.0")
 
 		meta = [
 			"proj.name"		: "Bed Nap",
@@ -17,40 +17,43 @@ class Build : BuildPod {
 		]
 
 		depends = [	
-			"sys        1.0.66 - 1.0", 
-			"concurrent 1.0.66 - 1.0",
-			"util       1.0.66 - 1.0",
-			"fandoc     1.0.66 - 1.0",
+			"sys        1.0.68 - 1.0", 
+			"concurrent 1.0.68 - 1.0",
+			"util       1.0.68 - 1.0",
+			"fandoc     1.0.68 - 1.0",
 
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Core ------------------------
-			"afConcurrent 1.0.8  - 1.0", 
-			"afIoc        2.0.6  - 2.0", 
-			"afIocConfig  1.0.16 - 1.0", 
-			"afIocEnv     1.0.16 - 1.0", 
+			"afConcurrent 1.0.14 - 1.0", 
+			"afIoc        3.0.2  - 3.0", 
+			"afIocConfig  1.1.0  - 1.1", 
+			"afIocEnv     1.1.0  - 1.1", 
 
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Web -------------------------
-			"afBedSheet        1.4.8  - 1.4", 
-			"afEfan            1.4.2  - 1.4",
-			"afEfanXtra        1.1.20 - 1.1",
-			"afPillow          1.0.22 - 1.0",
-			"afSlim            1.1.16 - 1.1",
-			"afColdFeet        1.3.2  - 1.3",
-			"afDuvet           1.0.6  - 1.0",
-			"afGoogleAnalytics 0.0+",
+			"afBedSheet        1.5.2  - 1.5", 
+			"afEfan            1.5.2  - 1.5",
+			"afEfanXtra        1.2.0  - 1.2",
+			"afPillow          1.1.2  - 1.1",
+			"afSlim            1.2.0  - 1.2",
+			"afColdFeet        1.4.0  - 1.4",
+			"afDuvet           1.1.2  - 1.1",
+			"afGoogleAnalytics 0.1.4  - 0.1",
 
 			// UPDATE /etc/fan/build.fan.efan
 			// ---- Test ------------------------
-			"afBounce 1.0.20 - 1.0",
-			"afButter 1.1.2  - 1.1",
+			"afBounce 1.1.2  - 1.1",
+			"afButter 1.2.2  - 1.2",
 			"afSizzle 1.0.2  - 1.0",
-			"xml      1.0.66 - 1.0"
+			"xml      1.0.68 - 1.0"
 		]
 
-		srcDirs = [`test/`, `fan/`]
+		srcDirs = [`fan/`, `test/`]
 		resDirs = [`doc/`, `etc/`, `etc/components/`, `etc/fan/`, `etc/pages/`, `etc/samples/`, `etc/web/`, `etc/web/css/`]
 
+		// we want include test dirs, so override with empty csv
+		meta["afBuild.testDirs"] = "ignore"
+		
 		docApi = true
 		docSrc = true
 	}
@@ -62,7 +65,7 @@ class Build : BuildPod {
 			pod := Pod.find(depend.name, false)
 			return (pod == null) ? true : !depend.match(pod.version)
 		}
-		installFromRepo(pods, "http://repo.status302.com/fanr/")
+		installFromRepo(pods, "http://eggbox.fantomfactory.org/fanr/")
 	}
 
 	@Target { help = "Compile to pod file and associated natives" }

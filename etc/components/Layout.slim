@@ -1,15 +1,11 @@
 doctype html
-html (xmlns="http://www.w3.org/1999/xhtml")
+html
 	head
 		title ${pageTitle} :: Bed Nap App
-		link [rel="shortcut icon" href="${asset(`etc/web/favicon.ico`)}"]
+		link (rel="shortcut icon" href="${asset(`etc/web/favicon.ico`)}")
 		
 	body
 		main.container
-			-- renderBody
+			== renderBody
 
-			-- app.renderFooter
-
-			// prevent the GA component from printing annoying warns when it doesn't have an Google account number
-			-- if (gaEnabled)
-				-- afGa.renderGoogleAnalytics
+			== app.renderFooter

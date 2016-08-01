@@ -9,7 +9,7 @@ internal abstract class BedNapTest : Test {
 	
 	override Void setup() {
 		server	= BedServer(AppModule#.pod).addModule(WebTestModule#).startup
-		server.injectIntoFields(this)
+		server.inject(this)
 		client = server.makeClient
 	}
 
@@ -18,9 +18,9 @@ internal abstract class BedNapTest : Test {
 	}
 }
 
-internal class WebTestModule {
+internal const class WebTestModule {
 	@Override
-	static IocEnv overrideIocEnv() {
+	IocEnv overrideIocEnv() {
         IocEnv.fromStr("Testing")
     }
 }
