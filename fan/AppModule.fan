@@ -41,8 +41,6 @@ const class AppModule {
 	Void contributeAppDefaults(Configuration config, IocEnv env) {
 		if (env.isProd)
 			config[BedSheetConfigIds.host]				= "http://bednap.fantomfactory.org"
-		config[GoogleAnalyticsConfigIds.accountNumber]	= Env.cur.vars["afGoogleAnalytics.accNo"] ?: ""
-		config[GoogleAnalyticsConfigIds.accountDomain]	= "//bednap.fantomfactory.org"
 	}
 
 	
